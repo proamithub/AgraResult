@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42eb81c6281656edab3c6139239c488ca0cafbd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("RModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

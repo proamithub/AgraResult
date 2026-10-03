@@ -53010,3 +53010,99 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+
+/*--------------------------------------------------------------------------------------------------*/
+
+/* Brand area: clean, official look */
+.main-sidebar .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #2b3035 0%, #343a40 100%);
+    border-bottom: none;
+    position: relative;
+}
+
+    /* Animated gold line at the bottom */
+    .main-sidebar .brand-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, #fff3b0, #d4af37, transparent);
+        background-size: 200% 100%;
+        animation: goldLine 3s linear infinite;
+    }
+
+@keyframes goldLine {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Logo: gold double border with soft breathing */
+.main-sidebar .brand-image {
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    padding: 2px;
+    background: #1f2327;
+    box-shadow: 0 0 0 3px rgba(212,175,55,.25);
+    animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        box-shadow: 0 0 0 3px rgba(212,175,55,.25);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(212,175,55,.08), 0 0 12px rgba(212,175,55,.4);
+    }
+}
+
+/* "Admin" text: gold shimmer */
+.main-sidebar .brand-text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(110deg, #b8860b 20%, #fff3b0 40%, #d4af37 60%, #b8860b 80%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShimmer 3.5s linear infinite;
+}
+
+@keyframes goldShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -50% 0;
+    }
+}
+
+/* Hover: slight lift on logo */
+.main-sidebar .brand-link:hover .brand-image {
+    transform: scale(1.08);
+    transition: transform .3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main-sidebar .brand-link::after,
+    .main-sidebar .brand-image,
+    .main-sidebar .brand-text {
+        animation: none;
+    }
+}

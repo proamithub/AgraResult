@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AgraResult\\RDATA\\RData.csproj": {}
+    "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj": {}
   },
   "projects": {
-    "D:\\AgraResult\\RDATA\\RData.csproj": {
+    "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AgraResult\\RDATA\\RData.csproj",
+        "projectUniqueName": "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj",
         "projectName": "RData",
-        "projectPath": "D:\\AgraResult\\RDATA\\RData.csproj",
+        "projectPath": "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\AgraResult\\RDATA\\obj\\",
+        "outputPath": "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "net6.0": {
+            "framework": "net6.0",
             "targetAlias": "net6.0",
             "projectReferences": {}
           }
@@ -44,10 +45,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "dependencies": {
             "Dapper": {
@@ -79,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

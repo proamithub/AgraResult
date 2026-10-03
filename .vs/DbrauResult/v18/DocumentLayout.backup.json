@@ -1,0 +1,108 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\vrs\\Helpdesk\\AgraResult\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\areas\\admin\\views\\shared\\_headeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\areas\\admin\\views\\shared\\_headeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAHsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-03T06:25:25.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_headerAdmin.cshtml",
+              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
+              "RelativeDocumentMoniker": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
+              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
+              "RelativeToolTip": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-03T06:24:59.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "adminlte.min.css",
+              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
+              "RelativeDocumentMoniker": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
+              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
+              "RelativeToolTip": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
+              "ViewState": "AgIAADoAAAAAAAAAAAAYwGgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-03T06:09:32.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "adminlte.css",
+              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
+              "RelativeDocumentMoniker": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
+              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
+              "RelativeToolTip": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
+              "ViewState": "AgIAAFXPAAAAAAAAAAAAAHPPAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-03T06:06:12.266Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

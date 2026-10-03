@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net6.0": {
       "Dapper/2.0.123": {
@@ -1479,11 +1479,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AgraResult\\RModel\\RModel.csproj",
+      "projectUniqueName": "D:\\vrs\\Helpdesk\\AgraResult\\RModel\\RModel.csproj",
       "projectName": "RModel",
-      "projectPath": "D:\\AgraResult\\RModel\\RModel.csproj",
+      "projectPath": "D:\\vrs\\Helpdesk\\AgraResult\\RModel\\RModel.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\AgraResult\\RModel\\obj\\",
+      "outputPath": "D:\\vrs\\Helpdesk\\AgraResult\\RModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1502,10 +1502,11 @@
       },
       "frameworks": {
         "net6.0": {
+          "framework": "net6.0",
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\AgraResult\\RDATA\\RData.csproj": {
-              "projectPath": "D:\\AgraResult\\RDATA\\RData.csproj"
+            "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj": {
+              "projectPath": "D:\\vrs\\Helpdesk\\AgraResult\\RDATA\\RData.csproj"
             }
           }
         }
@@ -1520,10 +1521,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "net6.0": {
+        "framework": "net6.0",
         "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": {
@@ -1555,7 +1557,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
