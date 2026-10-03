@@ -1,0 +1,333 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DbrauResultUI
+build_property.RootNamespace = DbrauResultUI
+build_property.ProjectDir = D:\AgraResult\DbrauResultUI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\AgraResult\DbrauResultUI
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Components/_PartialCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tcG9uZW50c1xfUGFydGlhbENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/CourseMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXENvdXJzZU1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/CSPMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXENTUE1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/Ledger.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXExlZGdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/LIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXExJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/ResultViewedReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXFJlc3VsdFZpZXdlZFJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Dashboard/StudentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXFN0dWRlbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_EditCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9FZGl0Q291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_footerAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9mb290ZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_headerAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9oZWFkZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_MarksData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9NYXJrc0RhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_menuAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9tZW51QWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_PageData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QYWdlRGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_PublicLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QdWJsaWNMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/Shared/_StaffLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TdGFmZkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_AnnualBioTech_I_II.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0FubnVhbEJpb1RlY2hfSV9JSS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_AnnualCom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0FubnVhbENvbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_AnnualPG.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0FubnVhbFBHLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_AnnualUG.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0FubnVhbFVHLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BCAVI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JDQVZJLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BCOMECOM.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JDT01FQ09NLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BDS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JEUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BioTech_Annual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0Jpb1RlY2hfQW5udWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Biotech_VOC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0Jpb3RlY2hfVk9DLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BPEDIV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JQRURJVi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BPES.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JQRVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Bsc_AG_1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JzY19BR18xLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Bsc_AG_3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JzY19BR18zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Bsc_AG_7.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JzY19BR183LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Bsc_AG_8.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JzY19BR184LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_BSC_AG_PLAIN.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0JTQ19BR19QTEFJTi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Diploma.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0RpcGxvbWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_DPL_II.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0RQTF9JSS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Edu1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0VkdTEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Edu2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0VkdTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Edu4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0VkdTQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Forestry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0ZvcmVzdHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Law.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X0xhdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_MBBS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01CQlMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_MBBS_OLD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01CQlNfT0xELmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_MEDICAL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01FRElDQUwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_MPES.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01QRVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Msc_AG.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01zY19BRy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Msc_AG_IV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X01zY19BR19JVi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Nep_G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X05lcF9HLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Nep_G_1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X05lcF9HXzEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Nep_PG.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X05lcF9QRy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Nursing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X051cnNpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_OLD_VOC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X09MRF9WT0MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_PG_CBCS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1BHX0NCQ1MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_PG_MLIS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1BHX01MSVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_PHARMA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1BIQVJNQS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_PHARMA_D.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1BIQVJNQV9ELmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_PHARMA_PG.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1BIQVJNQV9QRy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_t1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X3QxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_Voc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1ZvYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Components/_Result_VocAnnual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfUmVzdWx0X1ZvY0FubnVhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/CONSOLIDATED_GRADESHEET_DETAIL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDT05TT0xJREFURURfR1JBREVTSEVFVF9ERVRBSUwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Home/ResultDownload_t1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN1bHREb3dubG9hZF90MS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_stdheader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zdGRoZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_StdLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AgraResult/DbrauResultUI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hqmji3f28y

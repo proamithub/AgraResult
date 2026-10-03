@@ -1,0 +1,56 @@
+﻿
+<div class="login-header box-shadow">
+    <div class="bg-home-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-1 p-1 text-center">
+                    <a href="" class="">
+                            <img src="/logo_header.png" style="width:80px" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-sm-7 p-2 text-start" style="line-height:15px">
+                        <h3 class="university-name"> DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA</h3>
+                    <p class="university-name-hindi m-0"> डॉ० भीमराव आंबेडकर विश्वविद्यालय, आगरा</p>
+                    <p class="university-name-hindi m-1">(Formerly Agra University, Agra)</p>
+                    </div>
+                @* <div class="text-white col-sm-4 text-end">
+                    @if (CurrentUser != null)
+                    {
+                        <a class="plain-content" href="/Admin/Dashboard" style="    color: #fff;
+    text-decoration: none;"><i class="fa fa-user"></i> Dashboard</a>
+                    }
+                    else
+                    {
+                        <a class="plain-content" href="/Admin/Login" style="    color: #fff;
+    text-decoration: none;"><i class="fa fa-user"></i> Admin Login</a>
+                    }
+                </div> *@
+                <div class="bg-home-header card text-white col-sm-4 text-center float-end" hidden>
+                    <h4> <strong><i class="fa fa-headset glowhead"></i> Help Desk </strong></h4>
+                 
+                    <p class="mb-0"> <i class="fa fa-phone"></i><a class=" text-decoration-none" href="tel:+917355021538"><span class="text-white">+91- 7355021538</span></a>, <a class=" text-decoration-none" href="tel:+917839142531"><span class="text-white">7839142531</span></a> </p>
+
+                   
+                    <p> Timing: <br />11:00 AM to 02:00 PM  - 02:30 PM to 05:30 PM <br />(Working Days Only)</p>
+                    
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .glowhead {
+        animation: example1 2s linear infinite;
+    }
+
+    @@keyframes example1 {
+        from {
+            color: white;
+        }
+
+        to {
+            color: #337ab7;
+        }
+    }
+</style>

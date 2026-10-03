@@ -1,0 +1,302 @@
+﻿@using System.Security.Claims
+@model RModel.DTO.CourseMasterDTO_AM
+
+<style>
+    .checkboxsize {
+        width: 20px;
+        height: 20px;
+    }
+</style>
+<div class="modal fade" id="CourseEditModal" tabindex="-1" data-backdrop='static'>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <input id="encrdta" name="encrdta" hidden />
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Edit Course</h5>
+
+
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseID</span>
+                        <input type="number" value="@Model.CourseID" id="E_CourseID" class="form-control" min="0">
+                        <span id="E_CourseIDSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseName</span>
+                        <input type="text" value="@Model.CourseName" id="E_CourseName" class="form-control">
+                        <span id="E_CourseNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">DisplayName</span>
+                        <input type="text" id="E_DisplayName" class="form-control" value="@Model.DisplayName">
+                        <span id="E_DisplayNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseNameReal</span>
+                        <input type="text" id="E_CourseNameReal" class="form-control" value="@Model.CourseNameReal">
+                        <span id="E_CourseNameRealSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Semester</span>
+                        <input type="email" id="E_Semester" maxlength="4" class="form-control" value="@Model.Semester">
+                        <span id="E_SemesterSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">DisplaySemester</span>
+                        <input type="text" id="E_DisplaySemester" maxlength="10" class="form-control" value="@Model.DisplaySemester">
+                        <span id="E_DisplaySemesterSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Session</span>
+                        <input type="text" id="E_Session" maxlength="20" class="form-control" value="@Model.Session">
+                        <span id="E_SessionSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Sequence</span>
+                        <input type="number" id="E_Sequence" class="form-control" min="0" value="0" value="@Model.Sequence">
+                        <span id="E_SequenceSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">TemplateName</span>
+                        @* <input type="text" id="E_TemplateName" class="form-control" value="@Model.TemplateName"> *@
+                        <select asp-items="ViewBag.TemplateList" class="chosen-select form-control select2" name="E_TemplateName" id="E_TemplateName" ></select>
+                        <span id="E_TemplateNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">LinkPath</span>
+                        <input type="text" id="E_LinkPath" class="form-control">
+                        <span id="E_LinkPathSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Course Type</span>
+
+                        @* <select class="chosen-select form-control select2" name="CtypeID" id="CtypeID" multiple="multiple">
+
+                        @foreach (var item in ViewBag.CtMaster)
+                        {
+                        <option value="@item.Value" selected>@item.Text </option>
+                        }
+                        </select> *@
+                        <select asp-items="ViewBag.CtMaster" class="chosen-select form-control select2" name="UCtypeID" id="UCtypeID" multiple="multiple"></select>
+                        <span id="E_CtypeIDSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">ImageURL</span>
+                        <input type="text" id="E_ImageURL" class="form-control" value="https://exams.agrauniv.online">
+                        <span id="E_ImageURLSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                  @*   <div class="col-md-12 form-group">
+                        <span class="" style="width:120px">Rules</span>
+                        <textarea id="E_Rules" class="form-control">@Model.Rules 
+
+</textarea>
+                        <span id="E_RulesSpan" class="text-danger w-100 float-end"></span>
+                    </div> *@
+
+                    @{
+                        var checkedPG = Model.IsPG == true ? "checked" : "";
+                        var checkedUG = Model.IsPG == false ? "checked" : "";
+                        var checkedIsNew = Model.IsNew == true ? "checked" : "";
+                        var checkedIsActive = Model.IsActive == true ? "checked" : "";
+                        var checkedIsTestingActive = Model.IsTestingActive == true ? "checked" : "";
+                        
+                    }
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="radio"  name="IsPG" id="E_IsUG" @checkedUG>
+                        <label class="form-check-label p-1" for="IsUG">
+                            IsUG
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="radio"  name="IsPG" id="E_IsPG" @checkedPG>
+                        <label class="form-check-label p-1" for="IsPG">
+                            IsPG
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox"  id="CIsNew" @checkedIsNew>
+                        <label class="form-check-label p-1" for="IsNew">
+                            IsNew
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox"  id="CIsActive" @checkedIsActive>
+                        <label class="form-check-label p-1" for="IsActive">
+                            IsActive
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox" id="CIsTestingActive" @checkedIsTestingActive>
+                        <label class="form-check-label p-1" for="IsTestingActive">
+                            IsTestingActive
+                        </label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" id="btnewait" style="display:none" class="btn btn-primary">Wait... </button>
+                    <button type="button" id="btne" onclick="EditCourse()" class="btn btn-primary">Submit </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function Submitform() {
+
+        $("#formIndex").submit();
+    }
+    function EditCourse() {
+        flag = true;
+       
+        if ($("#E_CourseID").val() == "" || $("#E_CourseID").val() == "0") {
+            $("#E_CourseIDSpan").html('Please Enter Course Code')
+            flag = false;
+        }
+        else {
+            $("#E_CourseIDSpan").html("");
+        }
+        
+        if ($("#E_CourseName").val() == "") {
+            $("#E_CourseNameSpan").html('Please Enter Course Name')
+            flag = false;
+        }
+        else {
+            $("#E_CourseNameSpan").html("");
+        }
+        if ($("#E_DisplayName").val() == "") {
+            $("#E_DisplayNameSpan").html('Please Enter Display Name')
+            flag = false;
+        }
+        else {
+            $("#E_DisplayNameSpan").html("");
+        }
+        if ($("#E_CourseNameReal").val() == "") {
+            $("#E_CourseNameRealSpan").html('Please Enter Course Name Real')
+            flag = false;
+        }
+        else {
+            $("#E_CourseNameRealSpan").html("");
+        }
+        
+        if ($("#E_Semester").val() == "") {
+            $("#E_SemesterSpan").html('Please Enter Semester')
+            flag = false;
+        }
+        else {
+            $("#E_SemesterSpan").html("");
+        }
+        if ($("#E_DisplaySemester").val() == "") {
+            $("#E_DisplaySemesterSpan").html('Please Enter Display Semester')
+            flag = false;
+        }
+        else {
+            $("#E_DisplaySemesterSpan").html("");
+        }
+        if ($("#E_Session").val() == "") {
+            $("#E_SessionSpan").html('Please Enter Session')
+            flag = false;
+        }
+        else {
+            $("#E_SessionSpan").html("");
+        }
+        if ($("#E_Sequence").val() == "") {
+            $("#E_SequenceSpan").html('Please Enter Sequence')
+            flag = false;
+        }
+        else {
+            $("#E_SequenceSpan").html("");
+        }
+        if ($("#E_TemplateName").val() == "") {
+            $("#E_TemplateNameSpan").html('Please Enter TemplateName')
+            flag = false;
+        }
+        else {
+            $("#E_TemplateNameSpan").html("");
+        }
+
+        // if ($("#E_Rules").val() == "") {
+        //     $("#E_RulesSpan").html('Please Enter Rules')
+        //     flag = false;
+        // }
+        // else {
+        //     $("#E_RulesSpan").html("");
+        // }
+        if ($.trim($("#UCtypeID").val()) == "") {
+
+            $("#E_CtypeIDSpan").html('Please Select Course Type')
+            flag = false;
+
+        } else {
+            $("#E_CtypeIDSpan").html('')
+        }
+       
+        if (flag) {
+           
+            var formData = new FormData();
+            formData.append("EntryId", Number(@Model.EntryID));
+            formData.append("CourseID", $("#E_CourseID").val());
+            formData.append("CourseName", $("#E_CourseName").val());
+            formData.append("DisplayName", $("#E_DisplayName").val());
+            formData.append("CourseNameReal", $("#E_CourseNameReal").val());
+            formData.append("Semester", $("#E_Semester").val());
+            formData.append("DisplaySemester", $("#E_DisplaySemester").val());
+            formData.append("Session", $("#E_Session").val());
+            formData.append("Sequence", $("#E_Sequence").val());
+            formData.append("TemplateName", $("#E_TemplateName").val());
+            formData.append("LinkPath", $("#E_LinkPath").val());
+            formData.append("ImageURL", $("#E_ImageURL").val());
+            formData.append("IsPG", $('#E_IsPG').prop('checked'));
+            formData.append("IsNew", $('#CIsNew').prop('checked'));
+            formData.append("IsActive", $('#CIsActive').prop('checked'));
+           formData.append("IsTestingActive", $('#CIsTestingActive').prop('checked'));
+            formData.append("CtypeID", $('#UCtypeID').val());
+
+           
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Dashboard/EditCourseUpdate',
+                data: formData,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+                    // setting a timeout
+                    $('#btnlwait').show();
+                    $('#btnl').hide();
+                },
+                success: function (response) {
+                    if (response.res == "ok") {
+                        $('#btnlwait').hide();
+                        $('#btnl').show();
+                        $('#CourseEditModal').hide();
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully Updated!',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                        setTimeout(() => window.location.reload(), 2000)
+
+                    }
+                },
+                error: function (error) {
+
+                }
+            });
+        }
+
+    }
+</script>

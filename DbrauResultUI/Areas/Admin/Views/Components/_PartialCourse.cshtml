@@ -1,0 +1,288 @@
+﻿@using System.Security.Claims
+
+
+
+<style>
+    .checkboxsize {
+        width: 20px;
+        height: 20px;
+    }
+</style>
+<div class="modal fade" id="CourseAddModal" tabindex="-1" data-backdrop='static'>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <input id="encrdta" name="encrdta" hidden />
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Add Course</h5>
+
+
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseID</span>
+                        <input type="number" value="" id="A_CourseID" class="form-control" min="0">
+                        <span id="A_CourseIDSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseName</span>
+                        <input type="text" value="" id="A_CourseName" class="form-control">
+                        <span id="A_CourseNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">DisplayName</span>
+                        <input type="text" id="A_DisplayName" class="form-control">
+                        <span id="A_DisplayNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">CourseNameReal</span>
+                        <input type="text" value="" id="A_CourseNameReal" class="form-control">
+                        <span id="A_CourseNameRealSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Semester</span>
+                        <input type="email" id="A_Semester" maxlength="4" class="form-control">
+                        <span id="A_SemesterSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">DisplaySemester</span>
+                        <input type="text" id="A_DisplaySemester" maxlength="10" class="form-control">
+                        <span id="A_DisplaySemesterSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Session</span>
+                        <input type="text" id="A_Session" maxlength="20" class="form-control">
+                        <span id="A_SessionSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Sequence</span>
+                        <input type="number" id="A_Sequence" class="form-control" min="0" value="0">
+                        <span id="A_SequenceSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">TemplateName</span>
+                        @* <input type="text" id="A_TemplateName" class="form-control"> *@
+                        <select asp-items="ViewBag.TemplateList" class="chosen-select form-control select2" name="A_TemplateName" id="A_TemplateName" ></select>
+                        <span id="A_TemplateNameSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">LinkPath</span>
+                        <input type="text" id="A_LinkPath" class="form-control">
+                        <span id="A_LinkPathSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">Course Type</span>
+
+                        <select class="chosen-select form-control select2" name="CtypeID" id="CtypeID" multiple="multiple">
+
+                            @foreach (var item in ViewBag.CtMaster)
+                            {
+                                <option value="@item.Value">@item.Text </option>
+                            }
+                            </select>
+                        <span id="A_CtypeIDSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <span class="" style="width:120px">ImageURL</span>
+                        <input type="text" id="A_ImageURL" class="form-control" value="https://exams.agrauniv.online">
+                        <span id="A_ImageURLSpan" class="text-danger w-100 float-end"></span>
+                    </div>
+                   
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="radio" value="IsUG" name="IsPG" id="A_IsUG" checked>
+                        <label class="form-check-label p-1" for="IsUG">
+                            IsUG
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="radio" value="IsPG" name="IsPG" id="A_IsPG">
+                        <label class="form-check-label p-1" for="IsPG">
+                            IsPG
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox" value="IsNew" id="IsNew" checked>
+                        <label class="form-check-label p-1" for="IsNew">
+                            IsNew
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox" value="IsActive" id="IsActive" checked>
+                        <label class="form-check-label p-1" for="IsActive">
+                            IsActive
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkboxsize" type="checkbox" value="IsTestingActive" id="IsTestingActive" checked>
+                        <label class="form-check-label p-1" for="IsTestingActive">
+                            IsTestingActive
+                        </label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" id="btnewait" style="display:none" class="btn btn-primary">Wait... </button>
+                    <button type="button" id="btne" onclick="SaveCourse()" class="btn btn-primary">Submit </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    $(document).on('load', '.select2', function () {
+    $('.select2').each(function () {
+        $(this).select2({
+            // theme: 'bootstrap-5',
+            dropdownParent: $(this).parent(),
+        });
+        });
+    });
+
+
+    
+    function Submitform() {
+
+        $("#formIndex").submit();
+    }
+    function SaveCourse() {
+        flag = true;
+        if ($("#A_CourseID").val() == "" || $("#A_CourseID").val() == "0") {
+            $("#A_CourseIDSpan").html('Please Enter Course Code')
+            flag = false;
+        }
+        else {
+            $("#A_CourseIDSpan").html("");
+        }
+        if ($("#A_CourseName").val() == "") {
+            $("#A_CourseNameSpan").html('Please Enter Course Name')
+            flag = false;
+        }
+        else {
+            $("#A_CourseNameSpan").html("");
+        }
+        if ($("#A_DisplayName").val() == "") {
+            $("#A_DisplayNameSpan").html('Please Enter Display Name')
+            flag = false;
+        }
+        else {
+            $("#A_DisplayNameSpan").html("");
+        }
+        if ($("#A_CourseNameReal").val() == "") {
+            $("#A_CourseNameRealSpan").html('Please Enter Course Name Real')
+            flag = false;
+        }
+        else {
+            $("#A_CourseNameRealSpan").html("");
+        }
+        if ($("#A_Semester").val() == "") {
+            $("#A_SemesterSpan").html('Please Enter Semester')
+            flag = false;
+        }
+        else {
+            $("#A_SemesterSpan").html("");
+        }
+        if ($("#A_DisplaySemester").val() == "") {
+            $("#A_DisplaySemesterSpan").html('Please Enter Display Semester')
+            flag = false;
+        }
+        else {
+            $("#A_DisplaySemesterSpan").html("");
+        }
+        if ($("#A_Session").val() == "") {
+            $("#A_SessionSpan").html('Please Enter Session')
+            flag = false;
+        }
+        else {
+            $("#A_SessionSpan").html("");
+        }
+        if ($("#A_Sequence").val() == "") {
+            $("#A_SequenceSpan").html('Please Enter Sequence')
+            flag = false;
+        }
+        else {
+            $("#A_SequenceSpan").html("");
+        }
+        if ($("#A_TemplateName").val() == "") {
+            $("#A_TemplateNameSpan").html('Please Enter TemplateName')
+            flag = false;
+        }
+        else {
+            $("#A_TemplateNameSpan").html("");
+        }
+
+       
+        if ($.trim($("#CtypeID").val()) == "") {
+           
+            $("#A_CtypeIDSpan").html('Please Select Course Type')
+            flag = false;
+
+        } else {
+            $("#A_CtypeIDSpan").html('')
+        }
+       // alert($('#CtypeID').val())
+        if (flag) {
+            var formData = new FormData();
+            // formData.append("EntryId", 0);
+            formData.append("CourseID", $("#A_CourseID").val());
+            formData.append("CourseName", $("#A_CourseName").val());
+            formData.append("DisplayName", $("#A_DisplayName").val());
+            formData.append("CourseNameReal", $("#A_CourseNameReal").val());
+            formData.append("Semester", $("#A_Semester").val());
+            formData.append("DisplaySemester", $("#A_DisplaySemester").val());
+            formData.append("Session", $("#A_Session").val());
+            formData.append("Sequence", $("#A_Sequence").val());
+            formData.append("TemplateName", $("#A_TemplateName").val());
+            formData.append("LinkPath", $("#A_LinkPath").val());
+            formData.append("ImageURL", $("#A_ImageURL").val());
+            formData.append("IsPG", $('#A_IsPG').prop('checked'));
+            formData.append("IsNew", $('#IsNew').prop('checked'));
+            formData.append("IsActive", $('#IsActive').prop('checked'));
+             formData.append("IsTestingActive", $('#IsTestingActive').prop('checked'));
+            formData.append("CtypeID", $('#CtypeID').val());
+            
+
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Dashboard/AddCourse',
+                data: formData,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+                    // setting a timeout
+                    $('#btnlwait').show();
+                    $('#btnl').hide();
+                },
+                success: function (response) {
+                    if (response.res == "ok") {
+                        $('#btnlwait').hide();
+                        $('#btnl').show();
+                        $('#CourseAddModal').hide();
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully Updated!',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                        setTimeout(() => window.location.reload(), 2000)
+
+                    }
+                },
+                error: function (error) {
+
+                }
+            });
+        }
+
+    }
+</script>

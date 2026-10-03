@@ -1,0 +1,281 @@
+﻿@using RRepo
+@model List<RModel.DTO.StudentMasterDTO>
+@{
+    StudentMasterDTO sdata = new StudentMasterDTO();
+    if (Model.Count() > 0)
+    {
+        sdata = Model.OrderByDescending(x=>x.SEM_NO).OrderByDescending(x=>x.AllowForConsolidate).Take(1).First();
+    }
+}
+
+<style>
+    #example1 tbody tr:hover {
+        background-color: rgb(242 163 0 / 5%);
+    }
+
+    /* .heartbeat-double {
+              border: 1px solid #00e5ff;
+            animation: glowBorder 1s ease-in-out infinite;
+
+        }
+
+        @@keyframes glowBorder {
+            0%, 100% {
+                box-shadow: 0 0 1px #ffff, 0 0 2px #fff, 0 0 5px #fff;
+            }
+
+            20% {
+                box-shadow: 0 0 1px #eee, 0 0 8px #ffff, 0 0 10px #ffff;
+            }
+        } */
+    .heartbeat-double {
+        position: absolute;
+        z-index: 9999;
+        top: 4.5rem;
+        right: 1.2rem;
+        cursor: pointer;
+    }
+</style>
+<script>
+     $(document).ready(function() {
+
+     $(".heartbeat-double").hover(function() {
+
+     var maxX = $(window).width() - $(this).outerWidth();
+     var maxY = $(window).height() - $(this).outerHeight();
+
+     $(this).stop().animate({
+     left: Math.random() * maxX,
+     top: Math.random() * maxY
+     }, 300);
+
+     });
+
+     });</script>
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card">
+
+            <div class="card-body">
+                @if (Model.Count() > 0)
+                {
+                    @if (sdata.AllowForConsolidate == true)
+                    {
+                        sdata.EncrptedRoll = AESEncription.Base64Encode(sdata.ROLL_NO);
+                        <a asp-action="CONSOLIDATED_GRADESHEET_DETAIL" asp-area="" asp-controller="Home" asp-route-erollnumber="@sdata.EncrptedRoll" class="btn btn-primary btn-sm text-white m-1 " style="float:right" target="_blank"> <i class="fa fa-print"></i>  Consolidated Result</a>
+                    }
+                    <table id="" class="table table-bordered table-striped" width="100%">
+                        <tr>
+                            <th width="15%">ROLL NO</th>
+                            <td colspan="2"><strong>@sdata.ROLL_NO</strong></td>
+                        </tr>
+                        <tr>
+                            <th width="15%">Student Name</th>
+                            <td><strong> @sdata.NAME</strong></td>
+
+                            <td rowspan="3" width="110px">
+                                @{
+                                    var img = sdata.ImageURL + sdata.MPATH + sdata.PHOTOGRAPH;
+                                    var imghid = sdata.IsImgAnimate == true ? "heartbeat-double" : "";
+                                }
+                                <span style="text-align:right">
+                                    <img style="border:1px solid #000" id="Image1" src="@img" alt="" width="110" height="140" class="@imghid" />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="15%">College Name</th>
+                            <td>[@sdata.CCODE]-@sdata.CNAME</td>
+                        </tr>
+
+                        <tr>
+                            <th width="15%">Father Name</th>
+                            <td>@sdata.FNAME</td>
+                        </tr>
+                       
+
+                        <tr>
+                            <th width="15%">Date of Birth</th>
+                            <td colspan="2">
+                                @if (!string.IsNullOrEmpty(sdata.DOB.ToString()))
+                                {
+                                    @sdata.DOB.Value.ToString("dd MMM yyyy")
+                                }
+                                <span class="float-right"> EN_ROLL :  @sdata.ENROLLMENT_NO</span>
+                            </td>
+                        </tr>
+                        @* <tr>
+                            <th width="15%">Result Date</th>
+                            <td>
+                                @if (!string.IsNullOrEmpty(sdata.ResultDate.ToString()))
+                                {
+                                    @sdata.ResultDate.Value.ToString("dd MMM yyyy")
+                                }
+                                else
+                                {
+                                    <h4 class="text-danger">Date Not filled </h4>
+                                }
+
+                            </td>
+                        </tr> *@
+                    </table>
+                }
+                else
+                {
+                    <span>
+                        Data Not found
+                    </span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@if (Model != null)
+{
+    if (Model.Count() > 0)
+    {
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped" width="100%">
+                            <thead class="table-info">
+                                <tr>
+
+
+                                    <th>Course Name</th>
+                                    <th>Exam Type</th>
+                                    <th>Sem</th>
+                                    <th>HeldIn/ResultDate</th>
+                                    <th>Session</th>
+                                    <th>Result/Final_Result</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @{
+                                    int i = 1;
+                                }
+
+                                @foreach (var item in Model)
+                                {
+                                    var s = "Marksdetail" + i;
+
+                                    <tr>
+
+                                        <td>
+                                            @item.CourseName
+                                        </td>
+                                        <td>
+                                            @item.EXAM_TYPE
+                                        </td>
+                                        <td>
+                                            @item.DisplaySemester
+                                        </td>
+                                        <td style="font-size:14px">
+                                            @item.HELD_IN
+                                            <br />
+                                            @if (!string.IsNullOrEmpty(item.ResultDate.ToString()))
+                                                {
+                                                    @item.ResultDate.Value.ToString("dd MMM yyyy")
+                                                }
+                                                else
+                                                {
+                                                    <h4 class="text-danger">Date Not filled </h4>
+                                                }
+                                        </td>
+                                        <td>
+                                            @item.SessionName
+                                        </td>
+                                        <td>
+                                            @item.RESULT /
+                                            @if (!string.IsNullOrEmpty(item.FINAL_RESULT))
+                                            {
+                                                <span>
+                                                    @item.FINAL_RESULT
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span>
+                                                    --
+                                                </span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @{
+                                                var data1 = item.CourseName + "$" + item.ROLL_NO + "$" + item.CourseType + "$" + item.EXAM_TYPE + "$" + item.SessionName + "$" + item.HELD_IN + "$" + 1;
+                                                data1 = AESEncription.Base64Encode(data1);
+                                                var UriPayload = "/resultpreview/" + data1;
+                                            }
+                                            @if (item.IsLive == true)
+                                            {
+                                                <a class="btn btn-danger btn-sm " href="@UriPayload" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-danger">Result Is not Live</span>
+                                                @if (CurrentUser.Roles.Contains("Admin"))
+                                                {
+                                                    <a class="btn btn-danger btn-sm " href="@UriPayload" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                                }
+                                            }
+                                            <a data-roll='@item.ROLL_NO' data-sem_no='@item.SEM_NO' data-course_id='@item.COURSE_ID' data-sessionname='@item.SessionName' data-exam_type="@item.EXAM_TYPE" data-divpath="@s" data.held_in=@item.HELD_IN title="View More" class=" btn btn-success btn-sm   viewmore ViewMoreMarks">	<i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="section" style="display:none">
+                                        <td colspan="9">
+
+                                            <div id="@s">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    }
+}
+
+<script>
+    $(".ViewMoreMarks").click(function (e) {
+        var roll = $(this).data("roll")
+        var sem_no = $(this).data("sem_no")
+        var course_id = $(this).data("course_id")
+        var sessionname = $(this).data("sessionname")
+        var exam_type = $(this).data("exam_type")
+        var divpath = $(this).data("divpath")
+        var held_in = $(this).data("held_in")
+        
+
+       
+
+        if (roll != "") {
+
+            var divpdis = "/Admin/Dashboard/GetMarksData?roll=" + roll + "&&sem_no=" + sem_no + "&&course_id=" + course_id + "&&sessionname=" + sessionname + "&&exam_type=" + exam_type;
+        
+            $("#"+divpath).load(divpdis, function () {
+
+            });
+        }
+    });
+
+
+    $('.viewmore').click(function () {
+        $(this).parents('tr')
+            .next('.section')
+            .toggle('slow');
+    });
+</script>

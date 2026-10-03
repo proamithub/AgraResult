@@ -1,0 +1,306 @@
+﻿Rebuild started...
+Restored D:\vrs\DbrauResult\RDATA\RData.csproj (in 22 ms).
+Restored D:\vrs\DbrauResult\RModel\RModel.csproj (in 23 ms).
+Restored D:\vrs\DbrauResult\RRepo\RRepo.csproj (in 23 ms).
+Restored D:\vrs\DbrauResult\DbrauResultUI\DbrauResultUI.csproj (in 279 ms).
+1>------ Rebuild All started: Project: RData, Configuration: Debug Any CPU ------
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\QueryHelper.cs(18,89,18,93): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(19,111,19,115): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IProcedureHelper.cs(10,88,10,92): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(19,137,19,141): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\QueryHelper.cs(25,90,25,94): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IProcedureHelper.cs(11,89,11,93): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(64,101,64,105): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IQueryHelper.cs(9,77,9,81): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IProcedureHelper.cs(12,98,12,102): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(80,102,80,106): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IQueryHelper.cs(10,76,10,80): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Interfaces\IProcedureHelper.cs(12,124,12,128): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(96,96,96,100): warning CS8625: Cannot convert null literal to non-nullable reference type.
+1>D:\vrs\DbrauResult\RDATA\Entities\StudentRoles.cs(19,36,19,41): warning CS8618: Non-nullable property 'Admin' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\StudentRoles.cs(20,29,20,33): warning CS8618: Non-nullable property 'Role' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Colleges.cs(32,24,32,32): warning CS8618: Non-nullable property 'INSTCODE' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Colleges.cs(33,23,33,31): warning CS8618: Non-nullable property 'INSTNAME' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\SqlConnectionHelper.cs(12,16,12,35): warning CS8618: Non-nullable field '_connection' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'Roles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'AdminMasters' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'NewMasters' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'AdminMasterRoles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'Students' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'Courses' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'Colleges' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\DataContext.cs(9,16,9,27): warning CS8618: Non-nullable property 'FormToOpenLogs' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Dapper\DapperContext.cs(9,16,9,29): warning CS8618: Non-nullable field '_ProcedureHelper' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+1>D:\vrs\DbrauResult\RDATA\Dapper\DapperContext.cs(9,16,9,29): warning CS8618: Non-nullable field '_QueryHelper' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\StudentRoles.cs(11,32,11,39): warning CS8618: Non-nullable property 'Student' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\StudentRoles.cs(12,29,12,33): warning CS8618: Non-nullable property 'Role' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\FormToOpenLogs.cs(15,23,15,30): warning CS8618: Non-nullable property 'WRN_OLD' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(38,23,38,34): warning CS8618: Non-nullable property 'CollegeCode' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(39,23,39,33): warning CS8618: Non-nullable property 'CourseCode' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(40,23,40,33): warning CS8618: Non-nullable property 'CourseName' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(41,23,41,36): warning CS8618: Non-nullable property 'OldCourseName' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(42,23,42,33): warning CS8618: Non-nullable property 'CourseType' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(44,23,44,32): warning CS8618: Non-nullable property 'CreatedBy' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(46,23,46,32): warning CS8618: Non-nullable property 'UpdatedBy' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Courses.cs(51,23,51,39): warning CS8618: Non-nullable property 'RollNoCourseCode' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\NewMasters.cs(33,23,33,31): warning CS8618: Non-nullable property 'Colleges' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\NewMasters.cs(35,23,35,30): warning CS8618: Non-nullable property 'OldPath' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Role.cs(14,23,14,31): warning CS8618: Non-nullable property 'RoleName' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Role.cs(15,23,15,34): warning CS8618: Non-nullable property 'Description' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Role.cs(18,45,18,52): warning CS8618: Non-nullable property 'Student' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Role.cs(19,49,19,60): warning CS8618: Non-nullable property 'AdminMaster' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Role.cs(25,54,25,70): warning CS8618: Non-nullable property 'AdminMasterRoles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'EnrollNo' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'FirstName' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'MobileNo' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Entities\Student.cs(10,16,10,23): warning CS8618: Non-nullable property 'StudentRoles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(34,30,34,63): warning CS8619: Nullability of reference types in value of type 'ExpandoObject' doesn't match target type 'IDictionary<string, object>'.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(34,88,34,98): warning CS8604: Possible null reference argument for parameter 'value' in 'void IDictionary<string, object>.Add(string key, object value)'.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(39,30,39,63): warning CS8619: Nullability of reference types in value of type 'ExpandoObject' doesn't match target type 'IDictionary<string, object>'.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(52,30,52,63): warning CS8619: Nullability of reference types in value of type 'ExpandoObject' doesn't match target type 'IDictionary<string, object>'.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(52,88,52,98): warning CS8604: Possible null reference argument for parameter 'value' in 'void IDictionary<string, object>.Add(string key, object value)'.
+1>D:\vrs\DbrauResult\RDATA\Dapper\Implementations\ProcedureHelper.cs(57,30,57,63): warning CS8619: Nullability of reference types in value of type 'ExpandoObject' doesn't match target type 'IDictionary<string, object>'.
+1>RData -> D:\vrs\DbrauResult\RDATA\bin\Debug\net6.0\RData.dll
+1>Done building project "RData.csproj".
+2>------ Rebuild All started: Project: RModel, Configuration: Debug Any CPU ------
+2>D:\vrs\DbrauResult\RModel\CustomAttribute\ValidatePhoto.cs(11,30,11,37): warning CS8765: Nullability of type of parameter 'value' doesn't match overridden member (possibly because of nullability attributes).
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(9,38,9,44): warning CS8618: Non-nullable field 'Config' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\CommonResultDataDTO.cs(11,33,11,46): warning CS8618: Non-nullable property 'StudentMaster' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\CommonResultDataDTO.cs(12,42,12,55): warning CS8618: Non-nullable property 'STUDENT_MARKS' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\CommonResultDataDTO.cs(13,43,13,57): warning CS8618: Non-nullable property 'STUDENT_RESULT' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\FormToOpen.cs(14,23,14,28): warning CS8618: Non-nullable property 'EN_NO' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(17,53,17,96): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(19,52,19,94): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(20,53,20,96): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(21,52,21,94): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\DTO\ResultDTO.cs(14,41,14,55): warning CS8618: Non-nullable property 'CourseTypeList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\ResultDTO.cs(15,41,15,51): warning CS8618: Non-nullable property 'CourseList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\ResultDTO.cs(16,41,16,54): warning CS8618: Non-nullable property 'CourseAllList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\ResultDTO.cs(17,38,17,50): warning CS8618: Non-nullable property 'ExamTypeList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(22,55,22,100): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(23,54,23,98): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(18,23,18,27): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(23,23,23,31): warning CS8618: Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(24,23,24,34): warning CS8618: Non-nullable property 'NewPassword' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(29,23,29,38): warning CS8618: Non-nullable property 'ConfirmPassword' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(35,23,35,28): warning CS8618: Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(41,23,41,31): warning CS8618: Non-nullable property 'MobileNo' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(43,23,43,33): warning CS8618: Non-nullable property 'ProfilePic' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(44,23,44,39): warning CS8618: Non-nullable property 'ProfilePicDomain' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(49,26,49,30): warning CS8618: Non-nullable property 'File' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(53,23,53,35): warning CS8618: Non-nullable property 'EncriptedKey' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(55,23,55,38): warning CS8618: Non-nullable property 'VerificationUrl' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(66,25,66,30): warning CS8618: Non-nullable property 'Roles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\AdminMasterDTO.cs(67,23,67,35): warning CS8618: Non-nullable property 'DisplayRoles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(11,23,11,28): warning CS8618: Non-nullable property 'ENTRY' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(13,23,13,28): warning CS8618: Non-nullable property 'EN_NO' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(14,23,14,27): warning CS8618: Non-nullable property 'NAME' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(15,23,15,28): warning CS8618: Non-nullable property 'FNAME' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(16,23,16,28): warning CS8618: Non-nullable property 'MNAME' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(17,23,17,31): warning CS8618: Non-nullable property 'INSTCODE' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(18,23,18,30): warning CS8618: Non-nullable property 'SESSION' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(19,23,19,28): warning CS8618: Non-nullable property 'Regno' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(20,23,20,29): warning CS8618: Non-nullable property 'Gender' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(21,23,21,27): warning CS8618: Non-nullable property 'sdob' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(22,23,22,26): warning CS8618: Non-nullable property 'CAT' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(23,23,23,33): warning CS8618: Non-nullable property 'COURSENAME' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(24,23,24,33): warning CS8618: Non-nullable property 'IsVerified' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(25,23,25,26): warning CS8618: Non-nullable property 'WRN' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(26,23,26,43): warning CS8618: Non-nullable property 'IsVerifiedForPayment' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(27,23,27,30): warning CS8618: Non-nullable property 'BatchNo' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(28,23,28,32): warning CS8618: Non-nullable property 'FeeAmount' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\Studentdata.cs(29,23,29,28): warning CS8618: Non-nullable property 'Added' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\StudentMasterDTO.cs(36,23,36,28): warning CS8618: Non-nullable property 'qcore' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\StudentMasterDTO.cs(40,42,40,51): warning CS8618: Non-nullable property 'MarksList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\DTO\StudentMasterDTO.cs(41,43,41,53): warning CS8618: Non-nullable property 'ResultList' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(27,56,27,102): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(28,60,28,110): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(29,60,29,110): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(30,56,30,102): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(31,59,31,107): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(33,74,33,138): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(35,58,35,106): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(36,54,36,98): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(37,53,37,96): warning CS8602: Dereference of a possibly null reference.
+2>D:\vrs\DbrauResult\RModel\WebConfigSetting.cs(38,55,38,100): warning CS8602: Dereference of a possibly null reference.
+2>RModel -> D:\vrs\DbrauResult\RModel\bin\Debug\net6.0\RModel.dll
+2>Done building project "RModel.csproj".
+3>------ Rebuild All started: Project: RRepo, Configuration: Debug Any CPU ------
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(33,24,33,41): warning CS8603: Possible null reference return.
+3>D:\vrs\DbrauResult\RRepo\UnitOfWork.cs(15,16,15,26): warning CS8618: Non-nullable field '_mailClient' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+3>D:\vrs\DbrauResult\RRepo\UnitOfWork.cs(15,16,15,26): warning CS8618: Non-nullable field '_IAdminMaster' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+3>D:\vrs\DbrauResult\RRepo\Utilities\SmsClient.cs(59,30,59,32): warning CS0168: The variable 'ex' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\Repository.cs(32,20,32,46): warning CS8603: Possible null reference return.
+3>D:\vrs\DbrauResult\RRepo\Utilities\SmsClient.cs(81,30,81,32): warning CS0168: The variable 'ex' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\Repository.cs(57,30,57,56): warning CS8600: Converting null literal or possible null value to non-nullable type.
+3>D:\vrs\DbrauResult\RRepo\Repository\Repository.cs(58,25,58,31): warning CS8604: Possible null reference argument for parameter 'entity' in 'void Repository<TEntity>.Remove(TEntity entity)'.
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(16,13,16,37): warning SYSLIB0023: 'RNGCryptoServiceProvider' is obsolete: 'RNGCryptoServiceProvider is obsolete. To generate a random number, use one of the RandomNumberGenerator static methods instead.' (https://aka.ms/dotnet-warnings/SYSLIB0023)
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(16,51,16,75): warning SYSLIB0023: 'RNGCryptoServiceProvider' is obsolete: 'RNGCryptoServiceProvider is obsolete. To generate a random number, use one of the RandomNumberGenerator static methods instead.' (https://aka.ms/dotnet-warnings/SYSLIB0023)
+3>D:\vrs\DbrauResult\RRepo\Utilities\SmsClient.cs(89,52,89,74): warning SYSLIB0014: 'WebRequest.Create(string)' is obsolete: 'WebRequest, HttpWebRequest, ServicePoint, and WebClient are obsolete. Use HttpClient instead.' (https://aka.ms/dotnet-warnings/SYSLIB0014)
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(160,30,160,32): warning CS0168: The variable 'ex' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(177,13,177,26): warning SYSLIB0021: 'SHA512Managed' is obsolete: 'Derived cryptographic types are obsolete. Use the Create method on the base type instead.' (https://aka.ms/dotnet-warnings/SYSLIB0021)
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(177,44,177,57): warning SYSLIB0021: 'SHA512Managed' is obsolete: 'Derived cryptographic types are obsolete. Use the Create method on the base type instead.' (https://aka.ms/dotnet-warnings/SYSLIB0021)
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(51,73,51,80): warning CS8602: Dereference of a possibly null reference.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(51,130,51,136): warning CS8602: Dereference of a possibly null reference.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(51,186,51,196): warning CS8602: Dereference of a possibly null reference.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(54,63,54,77): warning CS8604: Possible null reference argument for parameter 'base64EncodedData' in 'string AESEncription.Base64Decode(string base64EncodedData)'.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(58,38,58,48): warning CS8601: Possible null reference assignment.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(59,39,59,50): warning CS8601: Possible null reference assignment.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(60,42,60,56): warning CS8601: Possible null reference assignment.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(66,44,66,60): warning CS8601: Possible null reference assignment.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(76,20,76,24): warning CS8603: Possible null reference return.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(75,30,75,32): warning CS0168: The variable 'ex' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(86,69,86,76): warning CS8602: Dereference of a possibly null reference.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(87,25,87,31): warning CS8602: Dereference of a possibly null reference.
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(93,30,93,32): warning CS0168: The variable 'ex' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(113,30,113,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(141,30,141,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(167,30,167,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(200,30,200,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(231,30,231,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(262,30,262,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(293,30,293,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\Repository\AdminMasterRepository.cs(319,30,319,31): warning CS0168: The variable 'e' is declared but never used
+3>D:\vrs\DbrauResult\RRepo\UnitOfWork.cs(12,30,12,41): warning CS0169: The field 'UnitOfWork._mailClient' is never used
+3>D:\vrs\DbrauResult\RRepo\Utilities\MailClient.cs(59,17,59,26): warning CA2200: Re-throwing caught exception changes stack information (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
+3>D:\vrs\DbrauResult\RRepo\Utilities\MailClient.cs(81,17,81,26): warning CA2200: Re-throwing caught exception changes stack information (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
+3>D:\vrs\DbrauResult\RRepo\Utilities\MailClient.cs(137,17,137,26): warning CA2200: Re-throwing caught exception changes stack information (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(117,17,117,26): warning CA2200: Re-throwing caught exception changes stack information (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
+3>D:\vrs\DbrauResult\RRepo\Utilities\Utility.cs(143,17,143,26): warning CA2200: Re-throwing caught exception changes stack information (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
+3>RRepo -> D:\vrs\DbrauResult\RRepo\bin\Debug\net6.0\RRepo.dll
+3>Done building project "RRepo.csproj".
+4>------ Rebuild All started: Project: DbrauResultUI, Configuration: Debug Any CPU ------
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(117,103,117,107): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(124,122,124,126): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(131,135,131,139): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(145,159,145,163): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\EncryptionService.cs(11,52,11,56): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(21,17,21,36): warning CS0618: 'IHostingEnvironment' is obsolete: 'This type is obsolete and will be removed in a future version. The recommended alternative is Microsoft.AspNetCore.Hosting.IWebHostEnvironment.'
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(29,49,29,68): warning CS0108: 'HomeController.httpContextAccessor' hides inherited member 'BaseController.httpContextAccessor'. Use the new keyword if hiding was intended.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(78,41,78,48): warning CS0114: 'HomeController.SignOut()' hides inherited member 'ControllerBase.SignOut()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\BaseController.cs(22,39,22,70): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\BaseController.cs(54,39,54,101): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\BaseController.cs(56,28,56,32): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\BaseController.cs(58,24,58,28): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(29,16,29,33): warning CS8618: Non-nullable field 'hostingEnv' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Filters\CustomAdminAuthorize.cs(17,17,17,50): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Filters\CustomAdminAuthorize.cs(19,35,19,117): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Filters\CustomAdminAuthorize.cs(24,26,24,30): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Filters\CustomAdminAuthorize.cs(13,23,13,28): warning CS8618: Non-nullable property 'Roles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\HtmlConverter.cs(36,21,36,35): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\HtmlConverter.cs(43,31,53,15): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\HtmlConverter.cs(54,29,54,36): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Components\ResultViewComponent.cs(18,39,18,70): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\SessionExtension.cs(21,20,25,33): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(51,21,51,32): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(51,49,51,63): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(92,30,92,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(46,42,46,47): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(110,21,110,32): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(110,49,110,63): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(150,30,150,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(104,42,104,55): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+4>D:\vrs\DbrauResult\DbrauResultUI\Components\ResultViewComponent.cs(95,30,95,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(165,58,165,80): warning SYSLIB0014: 'WebRequest.Create(string)' is obsolete: 'WebRequest, HttpWebRequest, ServicePoint, and WebClient are obsolete. Use HttpClient instead.' (https://aka.ms/dotnet-warnings/SYSLIB0014)
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(182,30,182,31): warning CS0168: The variable 'e' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t2.cshtml(3,9,3,11): warning CS0219: The variable 'we' is assigned but its value is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t1.cshtml(3,9,3,11): warning CS0219: The variable 'we' is assigned but its value is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(55,29,55,88): warning CS8604: Possible null reference argument for parameter 'text' in 'string StringExtensions.TitleCase(string text)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(59,29,59,74): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(59,29,59,85): warning CS8604: Possible null reference argument for parameter 'text' in 'string StringExtensions.TitleCase(string text)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\HtmlConverter.cs(114,27,121,11): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\HtmlConverter.cs(123,9,123,16): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(206,56,206,82): warning CS8604: Possible null reference argument for parameter 'value' in 'Claim.Claim(string type, string value)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\BaseController.cs(20,39,20,70): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t3.cshtml(249,59,249,74): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t3.cshtml(261,59,261,69): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t3.cshtml(306,63,306,79): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t3.cshtml(315,63,315,78): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t3.cshtml(3,9,3,11): warning CS0219: The variable 'we' is assigned but its value is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\BaseController.cs(39,39,39,101): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\BaseController.cs(41,28,41,32): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\BaseController.cs(43,24,43,28): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\BaseController.cs(53,48,53,71): warning CS8604: Possible null reference argument for parameter 'value' in 'Claim.Claim(string type, string value)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(86,27,86,58): warning CS8604: Possible null reference argument for parameter 'context' in 'Task AuthenticationHttpContextExtensions.SignOutAsync(HttpContext context, string? scheme)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(95,27,95,58): warning CS8604: Possible null reference argument for parameter 'context' in 'Task AuthenticationHttpContextExtensions.SignOutAsync(HttpContext context, string? scheme)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Home\Index.cshtml(190,81,190,95): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\TempDataExtension.cs(15,43,15,51): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\TempDataExtension.cs(16,20,16,79): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\TempDataExtension.cs(21,24,21,42): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\TempDataExtension.cs(22,20,22,79): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(112,21,112,37): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(135,30,135,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\DetectPageRefreshFilter.cs(14,33,14,77): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\DetectPageRefreshFilter.cs(14,33,14,88): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BreadCrumb.cs(11,23,11,55): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\CustomAuthorize.cs(16,17,16,50): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\CustomAuthorize.cs(18,35,18,117): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\CustomAuthorize.cs(23,26,23,30): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\CustomAuthorize.cs(12,23,12,28): warning CS8618: Non-nullable property 'Roles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BreadCrumb.cs(16,44,16,48): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BreadCrumb.cs(17,39,17,43): warning CS8625: Cannot convert null literal to non-nullable reference type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CacheService.cs(11,20,11,24): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(170,30,170,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CacheService.cs(23,20,23,24): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BaseViewPage.cs(18,39,18,101): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BaseViewPage.cs(27,28,27,32): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\BaseViewPage.cs(29,24,29,28): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CacheService.cs(30,20,30,24): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CacheService.cs(42,20,42,24): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(8,23,8,27): warning CS8618: Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(9,23,9,28): warning CS8618: Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(10,23,10,31): warning CS8618: Non-nullable property 'MobileNo' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(11,23,11,38): warning CS8618: Non-nullable property 'CurrentLocation' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(12,25,12,30): warning CS8618: Non-nullable property 'Roles' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(13,23,13,33): warning CS8618: Non-nullable property 'ProfilePic' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomPrincipal.cs(14,23,14,39): warning CS8618: Non-nullable property 'ProfilePicDomain' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(201,30,201,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\TimeZoneFliter.cs(16,79,16,138): warning CS8604: Possible null reference argument for parameter 'value' in 'void SessionExtensions.SetString(ISession session, string key, string value)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Filters\TimeZoneFliter.cs(23,34,23,38): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(178,42,178,55): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(17,37,17,79): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(18,33,18,71): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(20,33,20,102): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(21,29,21,94): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(23,28,23,99): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(25,38,25,51): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(25,83,25,92): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Helpers\CustomTagHelper.cs(13,28,13,39): warning CS8618: Non-nullable property 'ViewContext' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t4.cshtml(249,59,249,74): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t4.cshtml(261,59,261,69): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t4.cshtml(306,63,306,79): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t4.cshtml(315,63,315,78): warning CS8629: Nullable value type may be null.
+4>D:\vrs\DbrauResult\DbrauResultUI\Views\Components\_Result_t4.cshtml(3,9,3,11): warning CS0219: The variable 'we' is assigned but its value is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(245,30,245,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(285,30,285,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(73,17,73,62): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(73,88,73,137): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(75,24,75,28): warning CS8603: Possible null reference return.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(105,28,105,87): warning CS8604: Possible null reference argument for parameter 'text' in 'string StringExtensions.TitleCase(string text)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(109,28,109,73): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(109,28,109,84): warning CS8604: Possible null reference argument for parameter 'text' in 'string StringExtensions.TitleCase(string text)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(119,30,119,87): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(121,43,121,53): warning CS8604: Possible null reference argument for parameter 'controller' in 'IHtmlContent HtmlHelperExtension.Action(IHtmlHelper helper, string action, string controller, object parameters = null)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(316,30,316,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(126,24,126,75): warning CS8600: Converting null literal or possible null value to non-nullable type.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(128,55,128,59): warning CS8604: Possible null reference argument for parameter 'area' in 'IHtmlContent HtmlHelperExtension.Action(IHtmlHelper helper, string action, string controller, string area, object parameters = null)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(338,30,338,32): warning CS0168: The variable 'ex' is declared but never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(165,85,165,95): warning CS8604: Possible null reference argument for parameter 'candidates' in 'ActionDescriptor? IActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList<ActionDescriptor> candidates)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(177,82,177,98): warning CS8604: Possible null reference argument for parameter 'actionDescriptor' in 'ActionContext.ActionContext(HttpContext httpContext, RouteData routeData, ActionDescriptor actionDescriptor)'.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(180,23,180,30): warning CS8602: Dereference of a possibly null reference.
+4>D:\vrs\DbrauResult\DbrauResultUI\Extensions\HtmlActionExtension.cs(193,55,193,76): warning CS8601: Possible null reference assignment.
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(24,13,24,25): warning CS0169: The field 'AccountController.pageSizeJobs' is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(32,13,32,25): warning CS0169: The field 'HomeController.pageSizeJobs' is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(21,37,21,47): warning CS0169: The field 'AccountController.hostingEnv' is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(31,13,31,21): warning CS0169: The field 'HomeController.pageSize' is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Areas\Admin\Controllers\AccountController.cs(23,13,23,21): warning CS0169: The field 'AccountController.pageSize' is never used
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(256,17,256,75): warning CA1416: This call site is reachable on all platforms. 'Image.Save(Stream, ImageFormat)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+4>D:\vrs\DbrauResult\DbrauResultUI\Controllers\HomeController.cs(256,36,256,74): warning CA1416: This call site is reachable on all platforms. 'ImageFormat.Png' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+4>D:\vrs\DbrauResult\DbrauResultUI\Components\ResultViewComponent.cs(108,17,108,75): warning CA1416: This call site is reachable on all platforms. 'Image.Save(Stream, ImageFormat)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+4>D:\vrs\DbrauResult\DbrauResultUI\Components\ResultViewComponent.cs(108,36,108,74): warning CA1416: This call site is reachable on all platforms. 'ImageFormat.Png' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+4>DbrauResultUI -> D:\vrs\DbrauResult\DbrauResultUI\bin\Debug\net6.0\DbrauResultUI.dll
+4>Done building project "DbrauResultUI.csproj".
+========== Rebuild All: 4 succeeded, 0 failed, 0 skipped ==========
+========== Rebuild started at 12:33 PM and took 03.553 seconds ==========

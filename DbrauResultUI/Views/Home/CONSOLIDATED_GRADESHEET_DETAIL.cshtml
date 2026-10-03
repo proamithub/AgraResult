@@ -1,0 +1,842 @@
+﻿@model StudentMasterERPDTO
+@{
+    ViewBag.Title = "Student Result";
+    Layout = null;
+
+}
+<style type="text/css">
+    table.nospacing {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    table.print td {
+        padding: 2px;
+    }
+
+    td.pad5 {
+        padding: 1px;
+    }
+
+    td.pad2 {
+        padding: 1px;
+    }
+
+    table.fullwidth {
+        width: 100%;
+        margin: auto;
+    }
+</style>
+<div class="row" style="background-color:white;">
+
+    @if (Model == null)
+    {
+        <center>
+            <table cellpadding="0" cellspacing="0" width="50%">
+                <tr>
+                    <td align="right" valign="top" style="padding-top: 20px; padding-right:5px;">
+                        <a class="btn btn-sm btn-success" href="/admin/dashboard">
+                            &nbsp;Back
+                        </a>
+                        &nbsp;
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>
+                            No Data Found!
+                        </h2>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    }
+    else
+    {
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="right" valign="top" style="padding-top: 20px; padding-right:5px;">
+                    <button type="submit" class="btn btn-sm btn-success" onclick="GetPrint4('divForm');">
+                        <span class="fa fa-print"></span>&nbsp;Print
+                    </button>
+                    &nbsp;
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 50px;" valign="top">
+                    <div id="divForm">
+                        <table cellpadding="0" cellspacing="0" width="100%" align="center">
+                            <tr>
+                                <td style="font-size: 11px; font-family: Arial;" align="right">
+                                    Printed At: <label>@DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="fullwidth nospacing print " style="padding: 1%; font-size: 10px; font-family: Calibri, Arial;border: 1px solid #000 !important;text-align:center;border-left: 1px solid #000 !important;text-align:center; ">
+                            <tr>
+                                <td style=" padding: 0;border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important">
+                                    <table style="width: 100%;border-bottom: 1px solid #000 !important">
+                                        <tr style="padding:0px;">
+                                            <td style="width:2%;vertical-align:top;text-align:center; padding:5px;  border:none !important">
+
+
+                                                @{
+
+                                                    // var p = "/logo_header.png";
+                                                    var p = "https://result2024.agrauniv.online/logo_header.png";
+                                                }
+                                                <img src="@p" style="width: 70px; height:70px;margin-top:1px" alt="" />
+                                            </td>
+                                            <td style="width:75%;text-align:center;vertical-align:middle;padding:5px;margin-left:1px; line-height:15px;font-size:12px; border:none !important">
+                                                <span style=" font-weight:bold;font-size:20px">DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA </span> <br />
+                                                (FORMERLY AGRA UNIVERSITY)
+                                                <br />
+                                                CONSOLIDATED GRADESHEET-2024 <br />
+                                                @*  <b>@Model.DisplayCourseName</b> *@
+
+                                            </td>
+                                            <td style="float:right;font-weight:bold;font-size:10px ;border:none !important">
+                                                <img src="@String.Format("data:image/png;base64,{0}",
+                                            Convert.ToBase64String(Model.qcore))" height="70" width="70" />
+
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table style="width: 100%;">
+
+                                        <tr style="padding:0px;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;">
+
+                                            <td colspan="5" style="border-bottom:none !important; padding:0px">
+
+                                                <table style="width: 100%;  border-collapse: collapse;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ; padding-left:5px"> COURSE NAME</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                : <strong>
+                                                                    @Model.CourseName
+
+                                                                </strong>
+                                                            </td>
+                                                            <td rowspan="7" style="border:none !important;text-align:right">
+
+                                                                @*  <div style="font-weight:700 ;font-size:11px;padding:5px 0">
+                                                            <b>  CATEGORY :</b>
+                                                            <b> </b>
+                                                            </div> *@
+                                                                @{
+                                                                    var img = "https://download.agrauniv.online/" + Model.mpath + Model.PhotoUrl;
+                                                                }
+                                                                <span style="text-align:right">
+                                                                    <img style="border:1px solid #000" id="Image1" src="@img" alt="" width="90" height="120" />
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+
+
+
+                                                        <tr>
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ; padding-left:5px"> ENROLLMENT NO</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                :<strong> @Model.EnrollmentNo</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ; padding-left:5px">ROLL NO </th>
+
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                :<strong> @Model.RollNo1</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ;padding-left:5px"> STUDENT'S NAME</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                : <b>@Model.StudentName</b>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ; padding-left:5px"> FATHER'S NAME</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                : @Model.FatherName
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 12px ; padding-left:5px"> MOTHER'S NAME</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                : @Model.MotherName
+                                                            </td>
+                                                        </tr>
+
+
+                                                        <tr>
+
+                                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding-left:5px"> COLLEGE NAME</th>
+                                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding-left:5px;text-transform:uppercase;font-size: 12px">
+                                                                :<b> (@Model.CollegeCode)-@Model.CollegeName </b>
+                                                            </td>
+                                                        </tr>
+
+                                                        @* ----------------------------- *@
+
+
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                    <table style="width: 100%;">
+                                        @{
+                                            int sr = 0;
+                                        }
+                                        <tr style=" ">
+
+                                            <td style="padding:0px !important ;border:none !important;text-align:center">
+                                                <table style="width: 100%;  border-collapse: collapse;">
+
+                                                    <tr style="text-align:center;">
+                                                        <th style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;vertical-align:middle; padding:5px;margin-left:1px;vertical-align:top;font-size: 10px">
+                                                            S.No.
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Sem.
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Subject
+
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Paper Code
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Type of Paper
+
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Paper Title
+
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;width:5%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Paper Credits
+
+                                                        </th>
+                                                        <th style="border: 1px solid #000 !important;width:5%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Grade Points
+
+                                                        </th>
+                                                        <th style="border-top: 1px solid #000 !important;width:5%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 10px">
+                                                            Grade Awarded
+
+
+                                                        </th>
+                                                    </tr>
+
+
+
+                                                    @* ---------------1----------------- *@
+                                                    @if (Model.Result1ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks1ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result1ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result1ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result1ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result1ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result1ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result1ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+
+                                                    @* -------------2-------------- *@
+                                                    @if (Model.Result2ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks2ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result2ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result2ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result2ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result2ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result2ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result2ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+                                                    @* -------------3-------------- *@
+                                                    @if (Model.Result3ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks3ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result3ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result3ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result3ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result3ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result3ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result3ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+                                                    @* -------------4-------------- *@
+                                                    @if (Model.Result4ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks4ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result4ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result4ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result4ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result4ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result4ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result4ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+                                                    @* -------------5-------------- *@
+                                                    @if (Model.Result5ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks5ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result5ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center; font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result5ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result5ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result5ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result5ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result5ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+                                                    @* ------------6-------------- *@
+                                                    @if (Model.Result6ERPList.MasterId != null)
+                                                    {
+                                                        foreach (var item in Model.Marks6ERPList)
+                                                        {
+                                                            sr++;
+
+                                                            <tr style="font-size:8px;text-align:center;">
+                                                                <td style="text-align:center;font-weight:bold;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                    @sr
+                                                                </td>
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Model.Result6ERPList.YearSem
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.SubjectName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.PaperCodeN
+                                                                </td>
+
+
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.SubjectType
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;text-align:left">
+                                                                    @item.PaperName
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @item.Credit
+                                                                </td>
+                                                                <td style="border: 1px solid #000 !important;">
+                                                                    @Convert.ToDecimal(item.GradePoint).ToString("##")
+                                                                </td>
+                                                                <td style="border-top: 1px solid #000 !important;">
+                                                                    @item.Grade
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                        <tr style="font-size:8px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;font-weight:bold">
+                                                            <td colspan="2" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Semester :
+
+                                                                @Model.Result6ERPList.YearSem
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;text-align:left">
+                                                                Total Credits:
+
+                                                                @Model.Result6ERPList.TotalCredit
+                                                            </td>
+
+
+                                                            <td colspan="2" style="border: 1px solid #000 !important;text-align:left">
+                                                                Credits Earned:
+
+                                                                @Model.Result6ERPList.EarnedCredit
+                                                            </td>
+                                                            <td colspan="1" style="border: 1px solid #000 !important;">
+                                                                Total Points:
+
+                                                                @Model.Result6ERPList.TotalPoint
+                                                            </td>
+                                                            <td colspan="3" style="border-top: 1px solid #000 !important;">
+                                                                SGPA:
+
+                                                                @Model.Result6ERPList.SGPA
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                            <td colspan="8" style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important">
+                                                                Data Not found
+                                                            </td>
+                                                        </tr>
+
+                                                    }
+
+
+
+                                                </table>
+                                            </td>
+                                        </tr>
+
+
+                                    </table>
+
+                                    <table style="width: 100%;">
+                                        <tr style="font-size:8px">
+                                            <td colspan="9" style="border-top:none !important;">
+
+                                                <table style="border:none !important;border-collapse: collapse;float:right ;width:70%" class="table ">
+                                                    <tr style="text-align:center; font-size:12px;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            Semester
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            I
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            II
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            III
+                                                        </td>
+
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            IV
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            V
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            VI
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            CGPA
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                        <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;border-left: 1px solid #000 !important">
+
+
+                                                            SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result1ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result2ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+
+                                                            @Model.Result3ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result4ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result5ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result6ERPList.SGPA
+                                                        </td>
+                                                        <td style="border: 1px solid #000 !important;">
+                                                            @Model.Result6ERPList.CGPA
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="font-size:8px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center;">
+                                                        <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;border-left: 1px solid #000 !important">
+
+
+                                                            Result
+                                                        </td>
+                                                        <td colspan="7" style="border: 1px solid #000 !important;">
+                                                            <b>
+                                                                @Model.FinalResult
+
+                                                                @if (!string.IsNullOrEmpty(Model.FinalDivision))
+                                                                {
+                                                                    <span>With @Model.FinalDivision</span>
+
+                                                                }
+
+                                                            </b>
+                                                        </td>
+
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    }
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    function GetPrint4(divForm) {
+
+        var printContents = document.getElementById(divForm).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+
+    }
+</script>
+

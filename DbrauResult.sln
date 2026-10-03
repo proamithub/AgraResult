@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbrauResultUI", "DbrauResultUI\DbrauResultUI.csproj", "{FCF9D453-B25E-4E3D-9517-894C17CBAD46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RData", "RDATA\RData.csproj", "{36887317-92CA-4EBD-AB4E-AD70CEADF015}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RModel", "RModel\RModel.csproj", "{CAF85435-15CE-4F21-B45F-98596E1D9704}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RRepo", "RRepo\RRepo.csproj", "{F3FB2B26-BF6E-4985-9957-032A9BAC9162}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCF9D453-B25E-4E3D-9517-894C17CBAD46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF9D453-B25E-4E3D-9517-894C17CBAD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF9D453-B25E-4E3D-9517-894C17CBAD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF9D453-B25E-4E3D-9517-894C17CBAD46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36887317-92CA-4EBD-AB4E-AD70CEADF015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36887317-92CA-4EBD-AB4E-AD70CEADF015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36887317-92CA-4EBD-AB4E-AD70CEADF015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36887317-92CA-4EBD-AB4E-AD70CEADF015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF85435-15CE-4F21-B45F-98596E1D9704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF85435-15CE-4F21-B45F-98596E1D9704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF85435-15CE-4F21-B45F-98596E1D9704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF85435-15CE-4F21-B45F-98596E1D9704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FB2B26-BF6E-4985-9957-032A9BAC9162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FB2B26-BF6E-4985-9957-032A9BAC9162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FB2B26-BF6E-4985-9957-032A9BAC9162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FB2B26-BF6E-4985-9957-032A9BAC9162}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90A49BAD-8EF7-4370-B534-3EF57BF0F030}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/proamit2024
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DbrauResultUI\\DbrauResultUI.csproj
+		SccProjectName1 = DbrauResultUI
+		SccLocalPath1 = DbrauResultUI
+		SccProjectUniqueName2 = RDATA\\RData.csproj
+		SccProjectName2 = RDATA
+		SccLocalPath2 = RDATA
+		SccProjectUniqueName3 = RModel\\RModel.csproj
+		SccProjectName3 = RModel
+		SccLocalPath3 = RModel
+		SccProjectUniqueName4 = RRepo\\RRepo.csproj
+		SccProjectName4 = RRepo
+		SccLocalPath4 = RRepo
+	EndGlobalSection
+EndGlobal

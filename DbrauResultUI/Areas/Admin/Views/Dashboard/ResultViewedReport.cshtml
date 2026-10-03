@@ -1,0 +1,421 @@
+﻿@using RModel
+@model RModel.DTO.StudentList_Admin
+@{
+    var stud = Model.ResultViewed;
+}
+
+<style>
+    .checkboxsize {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .ldrpge {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.9);
+        z-index: 3;
+    }
+
+        .ldrpge img {
+            height: 120px;
+            position: absolute;
+            left: 50%;
+            top: 350px;
+            transform: translate(-50%, -50%);
+        }
+</style>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+
+            <div class="row">
+                
+                <div class="col-xl-12">
+                    <form style="margin:0px" id="formIndex" method="post">
+                      <div class="m-1">
+                        <div class="">
+
+                            <button type="button" class="btn btn-sm btn-info  m-1" id="dntexl1" onclick="DownloadRptResult('CourseWise')">
+                                <i class="bi bi-file-earmark-excel"></i> Course Wise Report
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-warning  m-1" id="dntexl2" onclick="DownloadRptResult('CollegeWise')">
+                                <i class="bi bi-file-earmark-excel"></i> College Wise Report
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success  m-1" id="dntexl3" onclick="DownloadRptResult('CatchWise')">
+                                <i class="bi bi-file-earmark-excel"></i> Catch Wise Report
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-danger float-right m-1" id="dntRPT" onclick="DownloadPendingResult()">
+                                <i class="fa fa-download"></i> Pending Report
+                            </button>
+
+                            <div class="float-right">
+                                <select class="form-select form-control" style="" id="SessionName" name="SessionName" onchange="Submitform()">
+
+                                    @foreach (var c in ViewBag.SessionList)
+                                    {
+                                        if (ViewBag.SessionName == c.SessionName)
+                                        {
+                                            <option value="@c.SessionName" selected>@c.SessionName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@c.SessionName">@c.SessionName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="card">
+                      
+                            <div class="card-header">
+                                <input id="CommandNameSrh" name="CommandNameSrh" value="" hidden />
+                                <div class="container">
+                                    <div class="row">
+                                       @*  <div class="col-2 mb-2">
+                                            <select class="form-select form-control" style="" id="SessionName" name="SessionName" onchange="filter2()">
+
+                                                @foreach (var c in Model.SessionList)
+                                                {
+                                                    if (Model.SessionName == c.SessionName)
+                                                    {
+                                                        <option value="@c.SessionName" selected>@c.SessionName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@c.SessionName">@c.SessionName</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div> *@
+                                       
+                                      
+
+                                </div>
+
+
+
+                            </div>
+                      
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="44" class="table table-bordered table-striped" width="100%">
+                                <thead class="table-info">
+                                    <tr>
+                                        <th class="text-center" width="70px">
+                                            SrNo.
+                                        </th>
+                                       
+                                       
+                                           
+                                        <th>CourseName</th>
+                                        <th>Session</th>
+                                        <th>Sem</th>
+                                        <th>Total</th>
+                                        <th>Not Lived</th>
+                                        <th>Live</th>
+                                        <th>Viewed</th>
+                                        <th>Percentage</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (stud != null)
+                                    {
+                                        if (stud.Count() > 0)
+                                        {
+                                            int i = 1;
+                                            foreach (var item in stud)
+                                            {
+
+                                                var rang = item.IsTestingActive == true ? "text-warning" : "";
+
+                                                <tr style="font-size:13px" class="@rang">
+
+                                                    <td>
+                                                      
+                                                        @i
+                                                    </td>
+
+                                                    <td><b>(@item.COURSE_ID) @item.COURSE_NAME</b></td>
+                                                    <td>@item.Session</td>
+                                                    <td>@item.SEM_NO</td>
+                                                    <td>@item.Total</td>
+                                                    <td>@item.NotLive</td>
+                                                    <td><b>@item.Live</b></td>
+                                                    <td><b>@item.Viewed</b></td>
+                                                    <td>@item.Per%</td>
+                                                   
+                                                </tr>
+                                                i++;
+                                            }
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="9">
+                                                <p>
+                                                    Data Not Found!
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                    </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalrpt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelrpt"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Session" class="col-form-label">Session</label>
+                        <input type="text" class="form-control" id="Session" value="2025-26">
+                    </div>
+                    <div class="form-group">
+                        <label for="Courseids" class="col-form-label">Course Id</label>
+                        <input type="text" class="form-control" id="Courseids">
+                    </div>
+                    <div class="form-group">
+                        <label for="Semester" class="col-form-label">Semester</label>
+                        <input type="number" class="form-control" id="Semester" max="8" min="0" value="1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="DownloadRptDownload()" id="dnw">Download</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Pendingrpt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelrpt">Pending Report</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5 form-group">
+                        <label for="Session" class="col-form-label">Session</label>
+                        <input type="text" class="form-control" id="SessionP" value="2025-26">
+                    </div>
+                    <div class="col-md-7 form-group">
+                        <label for="Courseids" class="col-form-label">Course IDs</label>
+                        <input type="text" class="form-control" id="CourseidsP">
+                    </div>
+                    <div class="col-md-5 form-group">
+                        <label for="Semester" class="col-form-label">Semesters</label>
+                        <input type="text" class="form-control" id="SemesterS" value="1,2,3,4,5,6">
+                    </div>
+                    <div class="col-md-7 form-group">
+                        <label for="Semester" class="col-form-label">Paper Type</label>
+                        <select id="PaperType" class="form-control " name="PaperType">
+                            <option value="I">Internal</option>
+                            <option value="P">Practical(Ext.)</option>
+                            <option value="B">Internal & Practical(Int.) Both</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input checkboxsize" type="checkbox" name="IsCtypeU" id="IsCtypeU">
+                    <label class="form-check-label p-1" for="IsCtypeU">
+                        NEP_UG
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input checkboxsize" type="checkbox" name="IsCtypeP" id="IsCtypeP">
+                    <label class="form-check-label p-1" for="IsCtypeP">
+                        NEP_PG
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input checkboxsize" type="checkbox" name="IsCtypeA" id="IsCtypeA">
+                    <label class="form-check-label p-1" for="IsCtypeA">
+                        All Course
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input checkboxsize" type="checkbox" name="IsCtypeS" id="IsCtypeS">
+                    <label class="form-check-label p-1" for="IsCtypeS">
+                        Subject/Paper
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="DownloadPendingRpt()" id="dnwp">Download</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+<script asp-append-version="true">
+
+
+    function DownloadRptResult(flagtext) {
+
+        // $("#dntexl").html('Please Wait...')
+        $("#exampleModalLabelrpt").html(flagtext)
+        $('#exampleModalrpt').modal('show');
+
+
+    }
+    function DownloadPendingResult() {
+        // $("#dntexl").html('Please Wait...')
+        // $("#Pendingrpt").html()
+        $('#Pendingrpt').modal('show');
+    }
+
+
+    function DownloadRptDownload() {
+        flag = true;
+        $("#dnw").html('Please Wait...')
+        var flagtext = $("#exampleModalLabelrpt").html();
+        var Courseids = $("#Courseids").val();
+        var Semester = $("#Semester").val();
+        var Session = $("#Session").val();
+
+        if (flag) {
+
+            var obj = {
+                flag: flagtext,
+                CourseIDs: Courseids,
+                Sem: Semester,
+                Session: Session
+            };
+
+            //    alert(JSON.stringify(obj);
+
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                url: '/Admin/Dashboard/DownloadResultSummary',
+                type: 'POST',
+                data: JSON.stringify(obj),
+                dataType: "json",
+                success: function(data) {
+                    // window.location.reload();
+                    //$("#dntexl").html('<i class="bi bi-file-earmark-excel"></i>  Download  Examiner List')
+                    var link = document.createElement("a");
+                    var fName = data.filename;
+                    if (link.download !== undefined) {
+                        link.setAttribute('href', data.filepath);
+                        link.setAttribute("download", fName);
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        $("#dnw").html('Download')
+                    }
+                },
+
+                error: function(error) {
+                    $("#dnw").html('Download')
+                }
+            });
+        }
+
+    }
+
+     function DownloadPendingRpt() {
+        flag = true;
+        if ($("#SemesterS").val() == "" || $("#SemesterS").val() == "0") {
+                            $("#SemesterS").addClass("input-validation-error");
+                            flag = false;
+                            }
+                            else {
+                                  $("#SemesterS").remove("input-validation-error");
+                            }
+
+
+                         var formData = new FormData();
+                            formData.append("SessionP", $("#SessionP").val());
+                            formData.append("CourseidsP", $("#CourseidsP").val());
+                            formData.append("SemesterS", $("#SemesterS").val());
+                            formData.append("PaperType", $("#PaperType").val());
+                            formData.append("IsCtypeU", $('#IsCtypeU').prop('checked'));
+                            formData.append("IsCtypeP", $('#IsCtypeP').prop('checked'));
+                            formData.append("IsCtypeA", $('#IsCtypeA').prop('checked'));
+                            formData.append("IsCtypeS", $('#IsCtypeS').prop('checked'));
+
+        if (flag) {
+
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                url: '/Admin/Dashboard/DownloadPending',
+                data: formData,
+                dataType: 'json',
+                type: 'POST',
+                contentType: false,
+                 processData: false,
+                 beforeSend: function () {
+                                        // setting a timeout
+                                      $("#dnwp").html('Please Wait...')
+                                    },
+                success: function(data) {
+                    // window.location.reload();
+                    //$("#dntexl").html('<i class="bi bi-file-earmark-excel"></i>  Download  Examiner List')
+                    var link = document.createElement("a");
+                    var fName = data.filename;
+                    if (link.download !== undefined) {
+                        link.setAttribute('href', data.filepath);
+                        link.setAttribute("download", fName);
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        $("#dnwp").html('Download')
+                    }
+                },
+
+                error: function(error) {
+                    $("#dnwp").html('Download')
+                }
+            });
+        }
+
+    }
+
+     function Submitform() {
+       
+        $("#formIndex").submit();
+    }
+</script>
+
+

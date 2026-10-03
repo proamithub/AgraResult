@@ -1,0 +1,111 @@
+﻿@model StudentMasterDTO
+@{
+    ViewBag.Title = "Student Admitted";
+    //Layout = null;
+
+}
+
+<style>
+    @@media only screen and (max-width: 600px) {
+        body {
+            width: 30cm;
+        }
+    }
+
+
+    @@media print {
+        @@page {
+            size: landscape;
+        }
+    }
+</style>
+
+<div class="container p-3">
+
+    <div class="row">
+        @await Component.InvokeAsync("Result", new { data = Model.EncrptedRoll })
+
+    </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+    function windowclose() {
+        window.close();
+
+
+    }
+
+    // function PrintPanel(copy) {
+    //     // $("#Cpytxt").print();
+    //     var display_settings = "toolbar=yes,location=no,directoried=yes,menubar=yes,scrollbars=yes,top=25,left=100,height=500 width=800,resizable=yes";
+    //     var content = document.getElementById(copy).innerHTML;
+    //     var docprint = window.open('', '', display_settings);
+    //     docprint.document.write('<html><head ></head><form onLoad="self.print();"><center>' + content + '</center></form></html>');
+    //     docprint.print();
+    //     docprint.document.close();
+    //     docprint.focus();
+    //     return false;
+    // }
+    function PrintPanel(copy, name) {
+        var divToPrint = document.getElementById(copy);
+        var htmlToPrint = '<style type="text/css">' +
+            '.table td, .table th {' +
+            'padding:3px;' +
+            'border-top: none;' +
+            '}' +
+            '.watermark{left:100px !important;}' +
+            '</style>';
+        htmlToPrint += divToPrint.outerHTML;
+        newWin = window.open("https://result2024.agrauniv.online/");
+        newWin.document.write('<head><title>' + name + '</title>');
+        // newWin.document.write("<h3 align='center'>Print Page</h3>");
+        newWin.document.write(htmlToPrint);
+        newWin.print();
+        newWin.close();
+    }
+
+    // function PrintPanel() {
+    //     var divToPrint = document.getElementById('Grid');
+    //     var htmlToPrint = '';
+    //     htmlToPrint += divToPrint.outerHTML;
+    //     var newWin = window.open("", "_blank", "width=800,height=600");
+    //     newWin.document.write(htmlToPrint);
+    //     newWin.document.close();
+    //     setTimeout(function () {
+    //         newWin.print();
+    //     }, 0);
+    //     return false;
+    // }
+</script>
+
+
+@* <script>
+    function PrintPanel(copy) {
+
+        var divToPrint = document.getElementById('Cpytxt');
+        var htmlToPrint = '';
+        htmlToPrint += divToPrint.outerHTML;
+        var newWin = window.open("");
+        newWin.document.write(htmlToPrint);
+        newWin.document.close();
+        setTimeout(function () {
+            newWin.print();
+        }, 0);
+        return false;
+    }
+</script> *@
+
+@*
+<script>
+    function PrintPanel(copy) {
+        var printContents = document.getElementById(copy).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+</script> *@

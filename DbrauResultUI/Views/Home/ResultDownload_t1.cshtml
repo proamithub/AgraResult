@@ -1,0 +1,994 @@
+﻿@model StudentMasterDTO
+@{
+    Layout = null;
+    var imgurl = Model.ImageURL + Model.MPATH;
+    var result = Model.ResultList.FirstOrDefault();
+    var filename = Model.ROLL_NO + "_" + Model.NAME;
+}
+
+<div style="">
+    
+    <div id="Cpytxt">
+        <div class="page " style="   width: 30cm;
+    min-height: 40cm;
+    padding: 1cm;
+    margin: 10px auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+            <div class="subpage" style=" color: #000; font-family: Arial; font-size: 14px">
+                <div id="prnttb">
+                    <table style="width: 100% ;  border-collapse: collapse;" class="table ">
+
+                        <tr style="padding:0px;border: 1px solid #000 !important;">
+
+                            <td style="padding:0px;border: 1px solid #000 !important;">
+                                <table style="width: 100%;border:none !important">
+                                    <tr style="padding:0px;">
+                                        <td style="width:2%;vertical-align:top;text-align:center; padding:5px;margin-left:1px;  border:none !important">
+
+
+                                            @{
+
+                                                // var p = "/logo_header.png";
+                                                var p = "https://result2024.agrauniv.online/logo_header.png";
+                                            }
+                                            <img src="@p" style="width: 75px; height: 75px;margin-top:2px" alt="" />
+                                        </td>
+                                        <td style="width:75%;text-align:center;vertical-align:top;padding:5px;margin-left:1px; line-height:25px;font-size:15px; border:none !important">
+                                            <span style=" font-weight:bold;font-size:20px">DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA </span> <br />
+                                            SEMESTER EXAMINATION @Model.HELD_IN<br />
+                                            STATEMENT OF MARKS <br />
+                                            <b>@Model.DisplayCourseName</b>
+
+                                        </td>
+                                        <td style="float:right;font-weight:bold;font-size:12px ;border:none !important">
+                                            <img src="@String.Format("data:image/png;base64,{0}",
+                                Convert.ToBase64String(Model.qcore))" height="80" width="100" />
+
+
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr style="padding:0px;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;">
+
+                            <td style="border-bottom:none !important; padding:0px">
+                                <div class="watermark" style="position: absolute;font-size: 3em;
+        width: 550px;
+        height: 550px;
+        left: 500px;
+        top: 25%;
+text-align:center;
+        background-repeat: no-repeat;
+        background-image: url('http://result2024.agrauniv.online/DHRAU_Watermark.png');
+        z-index: 9999;
+        opacity: 0.075;"></div>
+                                <table style="width: 100%;  border-collapse: collapse;">
+                                    <tbody>
+                                        @* <tr style="padding:0px;">
+                                        <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COURSE NAME </th>
+                                        <td colspan="3" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        :
+                                        </td>
+                                        </tr>
+                                        *@
+                                        <tr style="padding:0px">
+
+                                            @* <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">SEMESTER</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                            : @Model.DisplaySemester
+                                            </td> *@
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">ROLL NO </th>
+
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                :<strong> @Model.ROLL_NO</strong>
+                                            </td>
+
+                                            <td rowspan="6" style="border:none !important" width="110" height="150">
+                                                <center>
+                                                    <div style="font-weight:700 ;font-size:10px">
+                                                        <b>  CATEGORY :</b>
+                                                        <b> @Model.EXAM_TYPE</b>
+                                                    </div>
+                                                    @{
+                                                        var img = Model.ImageURL + Model.MPATH + Model.PHOTOGRAPH;
+                                                    }
+                                                    <img style="border:1px solid #000" id="Image1" src="@img" alt="" width="110" height="140" />
+                                                </center>
+
+                                            </td>
+                                        </tr>
+                                        @*   <tr>
+
+                                        <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">ROLL NO </th>
+
+                                        <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        :<strong> @Model.ROLL_NO</strong>
+                                        </td>
+                                        </tr> *@
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> ENROLLMENT No</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.ENROLLMENT_NO
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> STUDENT'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : <strong>@Model.NAME</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> FATHER'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.FNAME
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> MOTHER'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.MNAME
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COLLEGE NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : <strong>(@Model.CCODE) - @Model.CNAME</strong>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="border-collapse: collapse;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;text-transform:uppercase !important">
+
+                            <td style="padding:0px !important ;border:none !important">
+                                <table style="width: 100%;  border-collapse: collapse;">
+
+                                    <tr style="font-size:12px;text-align:center">
+                                        <th style="vertical-align:middle;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;width:5%;text-align:left; padding:5px;margin-left:1px;">
+                                            <center> <strong>Sr.No</strong></center>
+                                        </th>
+                                        <th style="vertical-align:middle;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;width:30%;text-align:left; padding:5px;margin-left:1px;">
+                                            <center> <strong>Subject</strong></center>
+                                        </th>
+                                        <th style="border: 1px solid #000 !important;width:10%;vertical-align:middle; padding:5px;margin-left:1px;"><strong>Course Code </strong> </th>
+                                        <th style="border: 1px solid #000 !important;width:45%;vertical-align:middle; padding:5px;margin-left:1px;"><strong>Paper Title </strong></th>
+                                        <th style="border: 1px solid #000 !important;width:5%;vertical-align:middle; padding:5px;margin-left:1px;"><strong>Course Credits</strong></th>
+                                        <th style="border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;width:5%;vertical-align:middle; padding:5px;margin-left:1px;"><strong>Grade Awarded</strong></th>
+
+
+                                    </tr>
+
+
+                                    @if (Model.MarksList.Count > 0)
+                                    {
+
+
+                                        <tr>
+                                            <td colspan="6" style="border-bottom: 1px solid #000 !important;font-weight:bold"> Major Subject</td>
+                                        </tr>
+
+                                        int c = 1;
+                                        int r = 0;
+                                        foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR1").OrderBy(x => x.PCODE))
+                                        {
+                                            string btmborder = "";
+
+                                            <tr>
+                                                @if (r == 0)
+                                                {
+                                                    if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR1").Count() == 1)
+                                                    {
+                                                        btmborder = "border-bottom: 1px solid #000 !important;";
+                                                    }
+                                                    <td ro style="border-right: 1px solid #000 !important;@btmborder">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;@btmborder"> @item.SUBJECT_NAME </td>
+                                                }
+
+                                                else
+                                                {
+
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                }
+
+
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> @item.PCODE </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                    @item.Credit
+                                                    @if (item.RE_EX == "True")
+                                                    {
+                                                        <span>*</span>
+                                                    }
+
+                                                </td>
+                                                <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                            </tr>
+                                            @if (r == 0)
+                                            {
+                                                c++;
+                                                r++;
+                                            }
+
+                                        }
+                                        int r1 = 0;
+                                        foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR2").OrderBy(x => x.PCODE))
+                                        {
+                                            string btmborder = "";
+                                            <tr>
+
+                                                @if (r1 == 0)
+                                                {
+                                                    if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR2").Count() == 1)
+                                                    {
+                                                        btmborder = "border-bottom: 1px solid #000 !important;";
+                                                    }
+                                                    <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;@btmborder">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;@btmborder"> @item.SUBJECT_NAME </td>
+                                                }
+                                                else
+                                                {
+
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                }
+
+
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;;text-align:center"> @item.PCODE </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                    @item.Credit
+                                                    @if (item.RE_EX == "True")
+                                                    {
+                                                        <span>*</span>
+                                                    }
+                                                </td>
+                                                <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                            </tr>
+                                            @if (r1 == 0)
+                                            {
+                                                c++;
+                                                r1++;
+                                            }
+
+                                        }
+                                        int r3 = 0;
+                                        foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR_ELECTIVE").OrderBy(x => x.PCODE))
+                                        {
+                                            string btmborder = "";
+                                            <tr>
+
+                                                @if (r3 == 0)
+                                                {
+                                                    if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "MAJOR_ELECTIVE").Count() == 1)
+                                                    {
+                                                        btmborder = "border-bottom: 1px solid #000 !important;";
+                                                    }
+                                                    <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;@btmborder">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;@btmborder"> @item.SUBJECT_NAME </td>
+                                                }
+                                                else
+                                                {
+
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;">
+                                                    </td>
+                                                }
+
+
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> @item.PCODE </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                    @item.Credit
+                                                    @if (item.RE_EX == "True")
+                                                    {
+                                                        <span>*</span>
+                                                    }
+                                                </td>
+                                                <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                            </tr>
+                                            @if (r3 == 0)
+                                            {
+                                                c++;
+                                                r3++;
+                                            }
+
+                                        }
+
+
+
+
+                                        @if (Model.SEM_NO != "V" && Model.SEM_NO != "VI")
+                                        {
+                                            <tr>
+                                                <td colspan="6" style="border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold"> MINOR Subject</td>
+                                            </tr>
+                                            int r4 = 0;
+                                            @if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "MINOR").Count() > 0)
+                                            {
+                                                foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "MINOR"))
+                                                {
+                                                    <tr>
+
+                                                        <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                            <span> @c </span>
+
+                                                        </td>
+                                                        <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.SUBJECT_NAME </td>
+
+
+
+                                                        <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> @item.PCODE </td>
+                                                        <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                        <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                            @item.Credit
+                                                            @if (item.RE_EX == "True")
+                                                            {
+                                                                <span>*</span>
+                                                            }
+                                                        </td>
+                                                        <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                                    </tr>
+                                                    @if (r4 == 0)
+                                                    {
+                                                        c++;
+                                                        r4++;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr>
+
+                                                    <td style="border-bottom: 1px solid #000 !important;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> Not Opted </td>
+
+
+
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> -- </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> -- </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                        --
+                                                    </td>
+                                                    <td style="border-bottom: 1px solid #000 !important;text-align:center"> -- </td>
+
+                                                </tr>
+                                                @if (r4 == 0)
+                                                {
+                                                    c++;
+                                                    r4++;
+                                                }
+
+                                            }
+                                        }
+                                        @if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "VOCATIONAL").Count() > 0)
+                                        {
+                                            <tr>
+                                                <td colspan="6" style="border-bottom: 1px solid #000 !important;font-weight:bold"> VOCATIONAL Subject</td>
+                                            </tr>
+
+                                            foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "VOCATIONAL"))
+                                            {
+                                                <tr>
+
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> VOCATIONAL COURSE </td>
+
+
+
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> @item.PCODE </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                        @item.Credit
+                                                        @if (item.RE_EX == "True")
+                                                        {
+                                                            <span>*</span>
+                                                        }
+                                                    </td>
+                                                    <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                                </tr>
+                                                c++;
+                                            }
+                                        }
+                                        @if (Model.MarksList.Where(x => x.SUBJECT_TYPE == "CO_CURRICULAR").Count() > 0)
+                                        {
+                                            <tr>
+                                                <td colspan="6" style="border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold"> CO-CURRICULAR (Qualifying)</td>
+                                            </tr>
+
+                                            foreach (var item in Model.MarksList.Where(x => x.SUBJECT_TYPE == "CO_CURRICULAR"))
+                                            {
+                                                <tr>
+
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                        <span> @c </span>
+
+                                                    </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> CO-CURRICULAR </td>
+
+
+
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center"> @item.PCODE </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"> @item.PNAME_R </td>
+                                                    <td style="border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:center">
+                                                        @if (item.Credit == "0")
+                                                        {
+                                                            <span>--</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>@item.Credit</span>
+                                                        }
+                                                        @if (item.RE_EX == "True")
+                                                        {
+                                                            <span>*</span>
+                                                        }
+                                                    </td>
+                                                    <td style="border-bottom: 1px solid #000 !important;text-align:center"> @item.Grade </td>
+
+                                                </tr>
+                                                c++;
+                                            }
+                                        }}
+
+
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="font-size:12px">
+                            <td style="border-top:none !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                            </td>
+                        </tr>
+                        <tr style="font-size:12px">
+                            <td style="border-top:none !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important; text-align:center">
+
+                                <div class="container">
+                                    <div class="row">
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td>
+
+                                                    <table style=" border-collapse: collapse;width:100%" class="table ">
+                                                        <tr style="font-size:12px">
+                                                            <td colspan="4" style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                <b>Current Semester Record</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="font-size:12px">
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits Earned</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Points</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">SGPA</th>
+                                                        </tr>
+                                                        <tr style="font-size:12px">
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalCredit</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalEarnCredit</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalGradePoint</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.SGPA</th>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                                <td>
+
+                                                    <table style="border-collapse: collapse;width:100%;float:right" class="table ">
+                                                        <tr style="font-size:12px">
+                                                            <td colspan="4" style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;"><b>Cumulative Record</b></td>
+                                                        </tr>
+                                                        <tr style="font-size:12px">
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits Earned</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Points</th>
+                                                            <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">SGPA</th>
+                                                        </tr>
+                                                        @if (@result.SEM_NO != "I")
+                                                        {
+                                                            <tr style="font-size:12px">
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.CUM_TOTAL_CR</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.CUM_TOTAL_EARN_CR</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.GP_TOTAL</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.CGPA_TOTAL</th>
+                                                            </tr>
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr style="font-size:12px">
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalCredit</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalEarnCredit</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.TotalGradePoint</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">@result.SGPA</th>
+                                                            </tr>
+                                                        }
+                                                    </table>
+
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td>
+                                                    @if (@result.SEM_NO != "I")
+                                                    {
+
+                                                        <table style="border-collapse: collapse;width:100%" class="table ">
+                                                            <tr style="font-size:12px">
+                                                                <td colspan="5" style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                    <b>
+                                                                        Previous Semester Records
+                                                                    </b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="font-size:12px">
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Sem</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Credits Earned</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">Total Points</th>
+                                                                <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">SGPA</th>
+                                                            </tr>
+
+                                                            @{
+                                                                int loop = 0;
+
+                                                                if (result.SEM_NO == "II")
+                                                                {
+                                                                    loop = 1;
+                                                                }
+                                                                if (result.SEM_NO == "III")
+                                                                {
+                                                                    loop = 2;
+                                                                }
+                                                                if (result.SEM_NO == "IV")
+                                                                {
+                                                                    loop = 3;
+                                                                }
+                                                                if (result.SEM_NO == "V")
+                                                                {
+                                                                    loop = 4;
+                                                                }
+                                                                if (result.SEM_NO == "VI")
+                                                                {
+                                                                    loop = 5;
+                                                                }
+                                                            }
+                                                            @for (int i = 1; i <= loop; i++)
+                                                            {
+                                                                <tr style="font-size:12px">
+                                                                    <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+
+                                                                        @if (i == 1)
+                                                                        {
+                                                                            <span>I</span>
+                                                                        }
+                                                                        @if (i == 2)
+                                                                        {
+                                                                            <span>II</span>
+                                                                        }
+                                                                        @if (i == 3)
+                                                                        {
+                                                                            <span>III</span>
+                                                                        }
+                                                                        @if (i == 4)
+                                                                        {
+                                                                            <span>IV</span>
+                                                                        }
+                                                                        @if (i == 5)
+                                                                        {
+                                                                            <span>V</span>
+                                                                        }
+
+
+                                                                    </th>
+                                                                    <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                        @if (i == 1)
+                                                                        {
+                                                                            <span>@result.TOTAL_CREDIT_1</span>
+                                                                        }
+                                                                        @if (i == 2)
+                                                                        {
+                                                                            <span>@result.TOTAL_CREDIT_2</span>
+                                                                        }
+                                                                        @if (i == 3)
+                                                                        {
+                                                                            <span>@result.TOTAL_CREDIT_3</span>
+                                                                        }
+                                                                        @if (i == 4)
+                                                                        {
+                                                                            <span>@result.TOTAL_CREDIT_4</span>
+                                                                        }
+                                                                        @if (i == 5)
+                                                                        {
+                                                                            <span>@result.TOTAL_CREDIT_5</span>
+                                                                        }
+                                                                    </th>
+                                                                    <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                        @if (i == 1)
+                                                                        {
+                                                                            <span>@result.EARN_CREDIT_1</span>
+                                                                        }
+                                                                        @if (i == 2)
+                                                                        {
+                                                                            <span>@result.EARN_CREDIT_2</span>
+                                                                        }
+                                                                        @if (i == 3)
+                                                                        {
+                                                                            <span>@result.EARN_CREDIT_3</span>
+                                                                        }
+                                                                        @if (i == 4)
+                                                                        {
+                                                                            <span>@result.EARN_CREDIT_4</span>
+                                                                        }
+                                                                        @if (i == 5)
+                                                                        {
+                                                                            <span>@result.EARN_CREDIT_5</span>
+                                                                        }
+                                                                    </th>
+                                                                    <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                        @if (i == 1)
+                                                                        {
+                                                                            <span>@result.TOTAL_GP_1</span>
+                                                                        }
+                                                                        @if (i == 2)
+                                                                        {
+                                                                            <span>@result.TOTAL_GP_2</span>
+                                                                        }
+                                                                        @if (i == 3)
+                                                                        {
+                                                                            <span>@result.TOTAL_GP_3</span>
+                                                                        }
+                                                                        @if (i == 4)
+                                                                        {
+                                                                            <span>@result.TOTAL_GP_4</span>
+                                                                        }
+                                                                        @if (i == 5)
+                                                                        {
+                                                                            <span>@result.TOTAL_GP_5</span>
+                                                                        }
+                                                                    </th>
+                                                                    <th style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                                                        @if (i == 1)
+                                                                        {
+                                                                            <span>@result.SGPA_1</span>
+                                                                        }
+                                                                        @if (i == 2)
+                                                                        {
+                                                                            <span>@result.SGPA_2</span>
+                                                                        }
+                                                                        @if (i == 3)
+                                                                        {
+                                                                            <span>@result.SGPA_3</span>
+                                                                        }
+                                                                        @if (i == 4)
+                                                                        {
+                                                                            <span>@result.SGPA_4</span>
+                                                                        }
+                                                                        @if (i == 5)
+                                                                        {
+                                                                            <span>@result.SGPA_5</span>
+                                                                        }
+                                                                    </th>
+                                                                </tr>
+                                                            }
+
+                                                        </table>
+
+
+                                                    }
+                                                </td>
+                                                <td>
+                                                    <table style="border-collapse: collapse;width:100%" class="table ">
+                                                        <tr style="font-size:12px">
+                                                            <td style="border-top: 1px solid #000 !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;text-align:left">
+                                                                <b>
+                                                                    RESULT :
+                                                                    @if (@result.SEM_NO == "I")
+                                                                    {
+                                                                        if (Model.ResultList.Select(c => c.RESULT).FirstOrDefault() == "FAIL")
+
+                                                                        {
+                                                                            <span>PROMOTED WITH BACK</span>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <span>
+                                                                                @Model.ResultList.Select(c => c.RESULT).FirstOrDefault()
+                                                                            </span>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        @Model.ResultList.Select(c => c.FINAL_RESULT).FirstOrDefault()
+
+                                                                    }
+                                                                </b>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="font-size:12px">
+                            <td style="border-top:none !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                <table style="width: 100%;border:none !important;">
+                                    <tr>
+                                        <td style="border:none !important ;text-align:left">
+
+                                            <p style="padding:0px;margin:0px">
+                                                DATE OF RESULT DECLARATION : <strong>
+                                                    @if (!string.IsNullOrEmpty(Model.ResultList.Select(x => x.ResultDate).FirstOrDefault().ToString()))
+                                                    {
+                                                        <span> @Model.ResultList.Select(x => x.ResultDate).FirstOrDefault().Value.ToString("dd-MMM-yyyy")</span>
+                                                    }
+                                                </strong>
+
+
+                                            </p>
+                                            @if (Model.MarksList.Any(x => x.Grade == "NQ") == true)
+                                            {
+                                                <b style="padding:0px;margin:0px">
+                                                    Note. CO-CURRICULAR PAPER NOT QUALIFIED
+                                                </b>
+                                            }
+                                            @if (Model.MarksList.Any(x => x.Grade == "PRMW") == true)
+                                            {
+                                                <b style="padding:0px;margin:0px">
+                                                    Note. PRMW - Practical Marks Wanted (Please contact your college)
+                                                </b>
+                                            }
+                                            @if (Model.MarksList.Any(x => x.Grade == "IMW") == true)
+                                            {
+                                                <b style="padding:0px;margin:0px">
+                                                    Note. IMW - Internal Marks Wanted (Please contact your college)
+                                                </b>
+                                            }
+                                            @if (string.IsNullOrEmpty(Model.ENROLLMENT_NO))
+                                            {
+                                                <b style="padding:0px;margin:0px">
+                                                    Note. RD(EN)
+                                                </b>
+                                            }
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin:0px" />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="border:none !important ;text-align:left">
+                                            <p style="padding:0px;margin:0px">
+                                                1. This statement is a computer generated document and no need of manual signature.
+                                            </p>
+                                            <p style="padding:0px;margin:0px">
+                                                2. In case of any discrepancy University record shall be final.
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <div style="text-align:center;float:right">
+                                    <img src="https://result2024.agrauniv.online/Sign.jpeg" height="50" width="100" /><br />
+                                    Controller of Examinations
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    @* -------------page-------------- *@
+                    <table style="width: 100% ;page-break-before: always;  border-collapse: collapse;" class="table ">
+
+                        <tr style="padding:0px;border: 1px solid #000 !important;">
+
+                            <td style="border: 1px solid #000 !important;padding:5px">
+
+                                <p style="text-align:center;margin:10px"><strong>GRADING AND PASSING RULES UNDER NEP</strong></p>
+
+                                <p style="text-align:left">1.The University follows a grade point scale and equivalent letters as given below:</p>
+                                <center>
+                                    <table width="50%" style="border: none; border-collapse: collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: 1px solid #000 !important;">लेटर ग्रेड</th>
+                                                <th style="border: 1px solid #000 !important;">विवरण</th>
+                                                <th style="border: 1px solid #000 !important;">अंको की सीमा</th>
+                                                <th style="border: 1px solid #000 !important;">ग्रेड पॉइंट</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @* <tr>
+                                            <td style="border: 1px solid #000 !important;">O (Outstanding)</td>
+                                            <td style="border: 1px solid #000 !important;">10</td>
+                                            </tr> *@
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">O</td>
+                                                <td style="border: 1px solid #000 !important;">Outstanding</td>
+                                                <td style="border: 1px solid #000 !important;">91-100</td>
+                                                <td style="border: 1px solid #000 !important;">10</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">A+</td>
+                                                <td style="border: 1px solid #000 !important;">Excellent</td>
+                                                <td style="border: 1px solid #000 !important;">81-90</td>
+                                                <td style="border: 1px solid #000 !important;">9</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">A</td>
+                                                <td style="border: 1px solid #000 !important;">Very Good</td>
+                                                <td style="border: 1px solid #000 !important;">71-80</td>
+                                                <td style="border: 1px solid #000 !important;">8</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">B+</td>
+                                                <td style="border: 1px solid #000 !important;">Good</td>
+                                                <td style="border: 1px solid #000 !important;">61-70</td>
+                                                <td style="border: 1px solid #000 !important;">7</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">B</td>
+                                                <td style="border: 1px solid #000 !important;">Above Average</td>
+                                                <td style="border: 1px solid #000 !important;">51-60</td>
+                                                <td style="border: 1px solid #000 !important;">6</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">C</td>
+                                                <td style="border: 1px solid #000 !important;">Average</td>
+                                                <td style="border: 1px solid #000 !important;">41-50</td>
+                                                <td style="border: 1px solid #000 !important;">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">P</td>
+                                                <td style="border: 1px solid #000 !important;">Pass</td>
+                                                <td style="border: 1px solid #000 !important;">33-40</td>
+                                                <td style="border: 1px solid #000 !important;">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">F</td>
+                                                <td style="border: 1px solid #000 !important;">Fail</td>
+                                                <td style="border: 1px solid #000 !important;">0-32</td>
+                                                <td style="border: 1px solid #000 !important;">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">AB</td>
+                                                <td style="border: 1px solid #000 !important;">Absent</td>
+                                                <td style="border: 1px solid #000 !important;">Absent</td>
+                                                <td style="border: 1px solid #000 !important;">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">Q</td>
+                                                <td style="border: 1px solid #000 !important;">Qualified</td>
+                                                <td style="border: 1px solid #000 !important;"> </td>
+                                                <td style="border: 1px solid #000 !important;"> </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">NQ</td>
+                                                <td style="border: 1px solid #000 !important;">Not Qualified</td>
+                                                <td style="border: 1px solid #000 !important;"> </td>
+                                                <td style="border: 1px solid #000 !important;"> </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <p style="text-align:left">2. U Stand for Unfairmeans (UFM)</p>
+
+                                <p style="text-align:left">3. Calculation of SGPA/CGPA</p>
+
+
+                                <center>
+                                    <table width="50%" style="border: none; border-collapse: collapse;">
+
+                                        <tbody>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">for jth Semester, <br />SGPA (Sj) = Σ(Ci x Gi)/ΣCi</td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                    here<br />
+                                                    Ci = number of credits of the ith course in jth Semester.<br />
+                                                    Gi = grade point scored by student in ith course in jthsemester.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">CGPA = Σ(Cj x Sj)/ΣCj</td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                    here<br />
+                                                    Sj = SGPA of the jth semester.<br />
+                                                    Cj = total number of credits in the jth semester.
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </center>
+
+                                <p style="text-align:left">
+                                    4.
+                                    The formula for conversion of CGPA to equivalent percentage of marks is given below :<br />
+                                    Percentage of Marks=CGPA x 9.5
+                                </p>
+
+                                <p style="text-align:left">
+                                    5.
+                                    Student will be awarded division as per the following table :
+                                </p>
+                                <center>
+                                    <table width="50%" style="border: none; border-collapse: collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: 1px solid #000 !important;">DIVISION</th>
+                                                <th style="border: 1px solid #000 !important;">CLASSIFICATION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">FIRST</td>
+                                                <td style="border: 1px solid #000 !important;">6.50 or more than that and less than 10.00 CGPA</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">SECOND</td>
+                                                <td style="border: 1px solid #000 !important;">5.00 or more than that and less than 6.50 CGPA</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #000 !important;">THIRD</td>
+                                                <td style="border: 1px solid #000 !important;">4.00 or more than that and less than 5.00 CGPA</t>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

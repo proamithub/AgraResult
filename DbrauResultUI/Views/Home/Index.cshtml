@@ -1,0 +1,693 @@
+﻿@model RModel.DTO.ResultDTO_DASH
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .fontgap {
+    letter-spacing: 1px;
+    }
+
+    .btn-lg {
+    font-size: 1rem;
+    }
+
+    @@media (max-width: 990px) {
+
+    .fontgap .btn {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    }
+    }
+
+    input[type=radio] {
+    border: 0px;
+    width: 1rem;
+    height: 1rem;
+    }
+
+    .bg {
+    /* The image used */
+    background-image: url("/dbru1.jpg");
+    /* Full height */
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .bglogo {
+    /* The image used */
+    background-image: url("/logo_header - bg.png");
+    /* Full height */
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    canvas {
+    height: 50px !important;
+    }
+
+    .form-group {
+    margin-bottom: 2px;
+    }
+
+    .card {
+    border: 3px solid #0d6efd;
+    border-radius: 5px;
+    }
+
+    .cardred {
+    border: 3px solid #dc3545;
+    border-radius: 5px;
+    }
+</style>
+<div class="" hidden>
+    <div class="col-md-12 alert-danger">
+        <marquee behavior="scroll" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+            @* Admission form submission last date is 30 NOVEMBER, 2021 (प्रवेश फॉर्म जमा करने की अंतिम तिथि 30 नवम्बर 2021)*@
+        </marquee>
+    </div>
+    @*<div class="clearfix">&nbsp;</div>*@
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="~/js/jquery-captcha.js"></script>
+<div class="">
+    <div class="container ">
+        <div class="row p-2">
+            <div class="col-sm-6">
+                <div class="card bg">
+                    <div class="card-header  bg-primary text-white text-center">
+                        <strong class="glow" style="font-size:20px"> AGRA UNIVERSITY RESULT</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <form class="m-2 text-center" method="post">
+                                <div class="row">
+
+                                    <div class="text-left " style="font-weight:normal">
+                                        Choose:
+                                        @foreach (var c in Model.CourseTypeList)
+                                        {
+
+
+                                            var selected = Model.CourseType == c.CourseType ? "checked" : "";
+                                            <span class="ml-3">
+                                                <label>
+                                                    <input id="@c.CourseType" type="radio" name="CourseType" value="@c.CourseType" onchange="filter()" @selected />
+                                                    <span>@c.CourseType</span>
+                                                </label>
+                                            </span>
+
+                                        }
+                                    </div>
+                                    <div class="row text-left">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Session:</label>
+
+
+                                        <div class="col-sm-10">
+                                            <select class="form-select" style="" id="SessionName" name="SessionName" onchange="SesChange()">
+
+                                                @if (Model.SESSION_MASTER_LIST.Count() > 0)
+                                                {
+                                                    foreach (var c in Model.SESSION_MASTER_LIST)
+                                                    {
+                                                        if (Model.SessionName == c.SESSIONS)
+                                                        {
+                                                            <option value="@c.SESSIONS" selected>@c.SESSIONS</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="@c.SESSIONS">@c.SESSIONS</option>
+
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mt-1">
+                                        @*<label>Courses</label>*@
+                                        <div class="text-left">
+                                            Course Type:
+                                            @{
+                                                var selectedpg = Model.IsPG == true ? "checked" : "";
+                                                var selectedug = Model.IsPG == false ? "checked" : "";
+                                            }
+                                            <input id="IsPG" type="radio" name="IsPG" value="false" onchange="filter()" @selectedug />
+
+                                            <label for="">UG</label>
+
+                                            <input id="IsPG" type="radio" name="IsPG" value="true" onchange="filter()" @selectedpg />
+
+                                            <label for="">PG</label>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @*<label>Courses</label>*@
+                                        <select class="form-control select2 m-2" style="width: 100%" id="CourseName" name="CourseName" onchange="filter()">
+                                            <option value="">--- Select Course ---</option>
+                                            @if (Model.CourseList.Count() > 0)
+                                            {
+                                                foreach (var item in Model.CourseList)
+                                                {
+                                                    if (Model.CourseName == item.CourseName)
+                                                    {
+
+                                                        <option value="@item.CourseName" data-coursename="@item.CourseName" selected>@item.CourseName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.CourseName" data-coursename="@item.CourseName">@item.CourseName</option>
+                                                    }
+                                                }
+                                            }
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        @*<label>Courses</label>*@
+                                        <select class="form-control select2 m-2" style="width: 100%" id="ExamTypeName" name="ExamTypeName" onchange="filter()">
+                                            <option value="">--- Select Exam Type ---</option>
+                                            @if (Model.ExamTypeList.Count() > 0)
+                                            {
+                                                foreach (var item in Model.ExamTypeList)
+                                                {
+
+                                                    if (Model.ExamTypeName == item.EXAM_TYPE)
+                                                    {
+
+                                                        <option value="@item.EXAM_TYPE" selected>@item.EXAM_TYPE</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.EXAM_TYPE">@item.EXAM_TYPE</option>
+                                                    }
+                                                }
+                                            }
+
+                                        </select>
+                                    </div>
+                                    @if (Model.HeldinList.Count() > 0)
+                                    {
+                                        <div class="form-group">
+                                            @*<label>Courses</label>*@
+                                            <select class="form-control select2 m-2" style="width: 100%" id="HELD_IN" name="HELD_IN">
+                                                <option value="">--- Select Exam Held  ---</option>
+                                                @foreach (var item in Model.HeldinList)
+                                                {
+                                                    <option value="@item.HELD_IN">@item.HELD_IN</option>
+                                                }
+
+                                            </select>
+                                        </div>
+                                    }
+                                    <div class="form-group ">
+                                        @*<label>Roll No.</label>*@
+                                        <input type="text" value="" id="roll" name="roll" placeholder="Roll No" class="form-control text-center" autocomplete="off" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*<label>Father's Name</label>*@
+                                        <input type="text" id="fname" name="fname" value="" placeholder="Father's Name" class="form-control text-center" />
+                                    </div>
+                                    <div class="mb-2  text-center " data-color="#fff">
+                                        OR
+                                    </div>
+                                    <div class="form-group">
+                                        @*<label>Enter Your Date of Birth :</label>*@
+                                        <input type="text" name="dob" id="dob"
+                                               class="form-control text-center date-picker"
+                                               placeholder="Select Date" value="Date of birth" readonly />
+                                    </div>
+
+
+                                </div>
+                                <div class="row pb-2 ">
+
+                                    <div class="captcha-box" style="text-align:center;">
+                                        <canvas id="canvas" height=100 style='height:100px; background-color:black'></canvas>
+                                        <input name="code" autocomplete="off" class="form-control" placeholder="Captcha Code" id="captcha" style="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <div class="mb-0">
+
+                                            <a class="btn btn-success btn-block text-white"
+                                               id="btnl" onclick="SubmitSearchForm()"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+
+
+                                            <a class="btn btn-primary btn-lg btn-block text-white" id="btnlwait" style="display:none"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Searching...</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                @* <img src="~/dbru.jpeg" class="img-fluid" style="min-height:500px" />*@
+                <div class=" card cardred bglogo">
+                    <h5 class="card-header bg-danger text-white newsline"> Update & Announcements</h5>
+                    <div class="card-body ">
+                        @*  <h5>Course <span class="float-end">Declared On</span>
+                        </h5>
+                        <hr /> *@
+                        <div style="height: 500px; overflow-x: visible; overflow-y: auto; font-size:12px !important">
+                            @foreach (var item in Model.CourseList)
+                            {
+                                <a class="d-block" href="@item.LinkPath" style="text-decoration: none;cursor:pointer">
+                                    @if (item.IsNew == true)
+                                    {
+                                        <i class="fa-solid fa-tags" style="color:red"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fa-solid fa-tags"></i>
+                                    }
+                                    @item.CourseName
+                                </a>
+                                <hr style="margin:3px" />
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@* ------------------------------ *@
+
+<style>
+    body {
+        position: relative;
+    }
+
+        body:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url('images/home-bg.webp') no-repeat;
+            background-size: cover;
+            filter: blur(4px);
+            -webkit-filter: blur(4px);
+        }
+
+    .modal-content {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        text-align: center;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .modal-body {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+        }
+
+        .modal-body b {
+            margin-bottom: 1rem;
+        }
+
+        .modal-body img {
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+        }
+
+    .btn-close {
+        float: right;
+    }
+
+    .modal-lg-custom {
+        max-width: 72%;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: 1px solid #28a745;
+        color: #28a745;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+        .btn:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+    .btn-outline-success {
+        /* Additional styling specific to the button class, if any */
+    }
+</style>
+<!-- Modal -->
+@* <div class="modal fade" id="MessageshowAlert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-auto-open>
+    <div class="modal-dialog modal-lg-custom modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="setCookieNotify('yoga', 'yes', 1)"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title text-center" style="color:red" id="MessageshowAlertLabel">INTERNATIONAL YOGA DAY 2024<br /> ( Yoga Pledge )</h4>
+                <p class="text-center">
+                    आप सभी को बताते हुए हर्ष हो रहा है कि इस बार विश्व योग दिवस के अवसर पर माननीय राज्यपाल महोदय के दिशा निर्देशन में शपथग्रहण का गिनीज बुक ऑफ वर्ल्ड रिकॉर्ड बनाने का लक्ष्य निर्धारित किया गया है। इस बड़े अनुष्ठान में आप स्वयं, समस्त शिक्षक गण, कर्मचारी गण, छात्र छात्राओं, परिवारीजन, एल्यूमनाई, और समाज के अन्य लोगों के द्वारा ऑनलाइन शपथ ग्रहण करके पूर्ण किया जा सकता है। इस निमित्त निम्नलिखित लिंक को क्लिक कर विश्वद्यालय के नाम में Dr Bhimrao Ambedkar University Agra सेलेक्ट कर शपथ ग्रहण कर सकते हैं। OTP आपके मोबाइल फोन पर प्राप्त होगा एवं एक मोबाइल नंबर से एक ही pledge मान्य होगा।
+                </p>
+                <h4 class="modal-title text-center" id="modal-title">
+                    Pledge में भाग लेने के लिये -
+                </h4>
+                <table style="width:100%; text-align:center; margin: 0 auto;">
+                    <tr>
+                        <td>1. ड्रॉपडाउन से डा भीमराव अंबेडकर विश्वविद्यालय का नाम चुनें।</td>
+                    </tr>
+                    <tr>
+                        <td>2. अपना नाम दर्ज करें।</td>
+                    </tr>
+                    <tr>
+                        <td>3. अपना फोन नंबर दर्ज करें।</td>
+                    </tr>
+                    <tr>
+                        <td>4. OTP भेजें पर क्लिक करें।</td>
+                    </tr>
+                    <tr>
+                        <td>5. OTP प्राप्त होने पर, उपयोगकर्ता OTP दर्ज करें और OTP सत्यापित करें पर क्लिक करें।</td>
+                    </tr>
+                    <tr>
+                        <td>6. "मैं प्रतिज्ञा लेता/लेती हूँ" पर क्लिक करें।</td>
+                    </tr>
+                    <tr>
+                        <td>7. प्रमाणपत्र देखें और डाउनलोड करें।</td>
+                    </tr>
+                </table>
+                <img src="/yoga.png" height="125px" width="185px" alt="Yoga">
+                @*  <b class="text-center">
+                <centre> </centre>
+                </b>
+                <div class="text-center">
+                    Scan the above QR Code to go to and take Yoga pledge
+                    <br />
+                    <a href="https://rajbhawanyogapledge.in/" class="btn btn-outline-success" target="_blank">Ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    function setCookieNotify(cname, cvalue, exdays) {
+
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+        $("#MessageshowAlert").modal('hide');
+    }
+
+    function getCookiey(c_name) {
+        var c_value = document.cookie, c_start = c_value.indexOf(" " + c_name + "=");
+        if (c_start == -1) c_start = c_value.indexOf(c_name + "=");
+        if (c_start == -1) {
+            c_value = null;
+        } else {
+            c_start = c_value.indexOf("=", c_start) + 1;
+            var c_end = c_value.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = c_value.length;
+            }
+            c_value = unescape(c_value.substring(c_start, c_end));
+        }
+        return c_value;
+    }
+
+    $(document).ready(function () {
+
+        // var adcookie = getCookiey("yoga");
+        //     //alert(adcookie)
+        //     if (!adcookie) {
+
+        //         setTimeout(function () {
+        //         $("#MessageshowAlert").modal('show');
+        //         }, 0);
+        //     }
+
+    });
+    // window.onload = function () {
+    //     $("#MessageshowAlert").modal('show');
+
+    // };
+    function closeclick() {
+
+        $("#MessageshowAlert").modal('hide');
+    }
+</script>
+@* ----------------------------------------- *@
+
+<style>
+    .glow {
+        animation: example 2s linear infinite;
+    }
+
+    @@keyframes example {
+        from {
+            color: white;
+        }
+
+        to {
+            color: #ccc;
+        }
+    }
+
+    .newsline {
+        font-family: sans-serif;
+        /*  margin: 100px auto;*/
+        color: #228B22;
+        text-align: center;
+        position: relative;
+    }
+
+        .newsline:before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 5px;
+            background: white;
+            left: 0;
+            top: 50%;
+            position: absolute;
+        }
+
+        .newsline:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 5px;
+            background: white;
+            right: 0;
+            top: 50%;
+            position: absolute;
+        }
+
+    .select2-container .select2-selection--single {
+        height: 40px;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 40px;
+    }
+</style>
+
+<script>
+    function SesChange() {
+        if ($('#SessionName').val() == '2022-23') {
+            window.location.href = "https://result.agrauniv.online/";
+        }else{
+         $("form").submit();
+        }
+    }
+
+    document.getElementById("captcha").addEventListener("keydown", function (e) {
+        if (!e) { var e = window.event; }
+        // e.preventDefault(); // sometimes useful
+
+        // Enter is pressed
+        if (e.keyCode == 13) { SubmitSearchForm(); }
+    }, false);
+
+    // step-1
+    const captcha = new Captcha($('#canvas'), {
+        length: 4
+    });
+
+    function filter() {
+        $("form").submit();
+    }
+
+    $('#btnlwait').hide();
+    $('#btnl').show();
+    function SubmitSearchForm() {
+        flag = true;
+
+     if ($.trim($("#CourseName").val()) == "") {
+
+    //$("#Course").addClass("input-validation-error");
+    $("#select2-Course-container").addClass("input-validation-error");
+    flag = false;
+    }
+    else {
+    $("#select2-Course-container").removeClass("input-validation-error");
+    }
+
+        if ($.trim($("#roll").val()) == "") {
+            $("#roll").addClass("input-validation-error");
+            flag = false;
+        }
+        else {
+            $("#roll").removeClass("input-validation-error");
+        }
+        if ($.trim($("#roll").val()) == "") {
+            $("#roll").addClass("input-validation-error");
+            flag = false;
+        }
+        else {
+            $("#roll").removeClass("input-validation-error");
+        }
+
+        if ($.trim($("#ExamTypeName").val()) == "") {
+
+            //$("#Course").addClass("input-validation-error");
+            $("#select2-ExamTypeName-container").addClass("input-validation-error");
+            flag = false;
+        }
+        else {
+            $("#select2-ExamTypeName-container").removeClass("input-validation-error");
+        }
+
+        if ($.trim($("#dob").val()) == "" || $.trim($("#dob").val()) == "Date of birth") {
+            $("#dob").addClass("input-validation-error");
+            flag = false;
+
+            if ($.trim($("#fname").val()) == "") {
+                $("#fname").addClass("input-validation-error");
+                flag = false;
+            }
+            else {
+                flag = true;
+                $("#dob").removeClass("input-validation-error");
+                $("#fname").removeClass("input-validation-error");
+            }
+        }
+        else {
+
+            $("#dob").removeClass("input-validation-error");
+
+
+        }
+        
+        if ($.trim($("#fname").val()) != "dsa") {
+            const ans = captcha.valid($('input[name="code"]').val());
+            if (ans == false) {
+                flag = false;
+                $("#captcha").addClass("input-validation-error");
+            } else {
+                $("#captcha").removeClass("input-validation-error");
+            }
+        }
+
+
+        if (flag) {
+
+            var obj = {
+                 CourseName: $("#CourseName").val(),
+    // CourseName: $("#select2-CourseID-container").text(),
+                CourseType: '@Model.CourseType',
+                DOBstr: $("#dob").val(),
+                FName: $("#fname").val(),
+                RollNumber: $("#roll").val(),
+                ExamTypeName: $("#ExamTypeName").val(),
+                SessionName: $("#SessionName").val(),
+                HELD_IN: $("#HELD_IN").val(),
+            };
+            // alert(JSON.stringify(obj.DOBstr))
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: '@Url.Action("SearchResult", "Home")',
+                data: JSON.stringify(obj),
+                dataType: "json",
+                beforeSend: function () {
+                    // setting a timeout
+                    $('#btnlwait').show();
+                    $('#btnl').hide();
+                },
+                success: function (response) {
+
+                    if (response.res == "success") {
+                        var d = JSON.stringify(response.data);
+                        var d = response.data;
+                        var name = "";
+                        var EncrptedRoll = "";
+                        EncrptedRoll = response.data.EncrptedRoll;
+                        window.location.href = "/Result/" + EncrptedRoll;
+
+                        $("#roll").val("");
+
+                    }
+                    else {
+                        $('#btnlwait').hide();
+                        $('#btnl').show();
+
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Invalid Details!',
+                            showConfirmButton: false,
+                            timer: 3000
+
+                        })
+                    }
+                },
+                error: function (result) {
+                    alert('Service call failed: ' + result.status + ' Type :' + result.statusText);
+                },
+                // complete: function () {
+                //     setTimeout(function () {
+                //         $('#btnlwait').hide();
+                //         $('#btnl').show();
+                //     }, 1000);
+                // },
+            });
+        }
+    }
+
+</script>

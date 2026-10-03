@@ -1,0 +1,145 @@
+﻿@using RModel
+@model List<RModel.DTO.Ledger_AMDTO>
+
+<style>
+    .checkboxsize {
+    width: 20px;
+    height: 20px;
+    }
+</style>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xl-12">
+
+                    @{
+                        var checkedtotal = ViewBag.IsCount == true ? "checked" : "";
+                    }
+
+                    <div class="card">
+                        <form style="margin:0px" id="formIndex" method="post">
+                            <div class="card-header">
+
+                                <a type="button" href="/admin/Lindex" class="btn btn-sm btn-success float-end">
+                                    &nbsp;Add New Ledger
+                                </a>
+
+
+
+                            </div>
+
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+
+                                <table id="example33" class="table table-bordered table-striped" width="100%">
+                                    <thead class="table-info">
+                                        <tr>
+
+                                            <th>SrNo.</th>
+                                            <th>InvoiceNo</th>
+                                            <th>LedgerName</th>
+                                            <th>PurchasedDate</th>
+                                            <th>CreatedDate</th>
+                                            <th>Amount</th>
+                                            <th>CreatedBy</th>
+                                            <th>Attachments</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @if (Model != null)
+                                        {
+                                            if (Model.Count() > 0)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model)
+                                                {
+                                                    //var colors = item.IsActive == false ? "background-color:#ffdde3" : "";
+                                                    <tr style="font-size:13px;">
+
+                                                        <td>
+                                                            @i
+                                                        </td>
+                                                        <td>
+                                                            @item.InvoiceNo
+                                                        </td>
+                                                        <td>
+                                                            @item.LedgerName
+                                                        </td>
+                                                        <td>
+                                                            @item.PurchasedDate
+                                                        </td>
+                                                        <td>
+                                                            @item.CreatedDate
+                                                        </td>
+
+
+                                                        <td>
+                                                            @item.Amount
+                                                        </td>
+
+                                                        <td>
+                                                            @item.CreatedByName
+
+                                                        </td>
+
+                                                        <td>
+                                                            @{int k=0;}
+                                                            @{
+                                                                var s = item.Attachments.Split(',');
+                                                            }
+                                                          
+                                                            @foreach (var item1 in s)
+                                                                {
+                                                                    k++;
+                                                                    <a href="@item1">
+                                                                       File-@k ,
+                                                                    </a>
+
+                                                                }
+                                                        </td>
+
+                                                    </tr>
+                                                    i++;
+                                                }
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            <tr>
+                                                <td colspan="9">
+                                                    <p>
+                                                        Data Not Found!
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+
+</script>

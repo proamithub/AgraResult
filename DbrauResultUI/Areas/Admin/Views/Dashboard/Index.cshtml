@@ -1,0 +1,252 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+
+    .ldrpge {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.9);
+        z-index: 3;
+    }
+
+        .ldrpge img {
+            height: 120px;
+            position: absolute;
+            left: 50%;
+            top: 350px;
+            transform: translate(-50%, -50%);
+        }
+</style>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 offset-md-2">
+                    <div class="input-group">
+
+                        <input type="text" id="TicketBox1" name="TicketBox1" class="form-control form-control-lg" placeholder="Enter Roll No">
+                        <div class="input-group-append">
+
+                            <button type="button" class="btn btn-lg btn-default" onclick="SearchTicketAdminOther()">
+                                <i class="fa fa-search"></i>
+                            </button>
+
+                            
+                        </div>
+                    </div>
+                  
+
+                </div>
+                @* <a class="float-end m-2" id="AllResultView" href="javascript:void(0)" onclick="GetAllResult()">  Consolidated Result</a> *@
+            </div>
+        </div><!-- /.container-fluid -->
+    </div>
+
+    <div class="container-fluid">
+
+
+        <div id="pagedetails">
+        </div>
+
+
+    </div>
+    <div class="ldrpge">
+        <img src="~/loader.svg" alt="" />
+    </div>
+    <div class="content-body">
+
+        <!-- row -->
+        <div class="container-fluid">
+            <h5 class="mb-2"></h5>
+            <div class="row">
+                @*   <div class="col-md-6 col-sm-6 col-12">
+                <a href="#">
+                <div class="info-box">
+                <span class="info-box-icon bg-warning"><i class="fa fa-users text-white"></i></span>
+
+                <div class="info-box-content">
+                <span class="info-box-text "> CSP Master</span>
+                <span class="info-box-number  text-success">@ViewBag.CSPMaster</span>
+                </div>
+                </div>
+                </a>
+                </div> *@
+                @* <div class="col-md-6 col-sm-6 col-12">
+                <a href="/admin/dashboard/unverifiedstudentslist">
+                <div class="info-box">
+                <span class="info-box-icon bg-danger"><i class="fa fa-users"></i></span>
+
+                <div class="info-box-content">
+                <span class="info-box-text ">Courses</span>
+                <span class="info-box-number  text-success">@ViewBag.Courses </span>
+                </div>
+                </div>
+                </a>
+                </div> *@
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("TicketBox1").addEventListener("keydown", function (e) {
+        if (!e) { var e = window.event; }
+        // e.preventDefault(); // sometimes useful
+
+        // Enter is pressed
+        if (e.keyCode == 13) { SearchTicketAdminOther(); }
+    }, false);
+
+    function OpenProgressBar() {
+        $(".ldrpge").show();
+    }
+
+    function CloseProgessBar() {
+        // debugger;
+        $(".ldrpge").hide();
+    }
+   // AllResultView
+
+    function SearchTicketAdminOther() {
+        flag = true;
+
+        // if ($.trim($("#Ticket").val()) == "") {
+        //     $("#Ticket").addClass("input-validation-error");
+        //     flag = false;
+        // }
+        // else {
+        //     $("#Ticket").removeClass("input-validation-error");
+        // }
+        OpenProgressBar();
+        if (flag) {
+
+            var RollNumber=$("#TicketBox1").val();
+            var divpdis = "/Admin/Dashboard/CheckResultData?RollNumber=";
+            $("#pagedetails").load(divpdis + RollNumber, function () {
+                CloseProgessBar();
+               
+            });
+
+            // $.ajax({
+            //     url: '@Url.Action("CheckResult", "Dashboard", new { area = "Admin" })',
+            //     type: 'GET',
+            //     data: { RollNumber: RollNumber },
+            //     beforeSend: function () {
+            //         // setting a timeout
+            //         $('#btnserwait').show();
+            //         $('#btnser').hide();
+
+            //     },
+            //     success: function (result) {
+            //         //$('#TicketBox1').val("");
+            //         alert(result)
+            //         $('#pagedetails').val(result);
+            //     },
+            //     error: function (result) {
+            //         alert("e"+JSON.stringify(result))
+            //         alert("Data not found! Try Again Later!");
+            //     },
+            //     complete: function () {
+            //         setTimeout(function () {
+            //             $('#btnserwait').hide();
+            //             $('#btnser').show();
+
+            //         }, 0);
+            //     },
+            // });
+
+        };
+    }
+
+
+    function GetAllResult() {
+        flag = true;
+
+        // if ($.trim($("#Ticket").val()) == "") {
+        //     $("#Ticket").addClass("input-validation-error");
+        //     flag = false;
+        // }
+        // else {
+        //     $("#Ticket").removeClass("input-validation-error");
+        // }
+        OpenProgressBar();
+        if (flag) {
+
+            var RollNumber = $("#TicketBox1").val();
+            window.location.href = "/result_consolidated_gradesheet/" + RollNumber;
+            // $.ajax({
+            //     url: '@Url.Action("CONSOLIDATED_GRADESHEET", "home", new { area = "" })',
+            //     type: 'GET',
+            //     data: { RollNumber: RollNumber },
+            //     beforeSend: function () {
+            //         // setting a timeout
+            //         $('#btnserwait').show();
+            //         $('#btnser').hide();
+
+            //     },
+            //     success: function (result) {
+            //         //$('#TicketBox1').val("");
+                  
+            //     },
+            //     error: function (result) {
+                  
+            //         alert("Data not found! Try Again Later!");
+            //     },
+            //     complete: function () {
+            //         setTimeout(function () {
+            //             CloseProgessBar();
+
+            //         }, 0);
+            //     },
+            // });
+
+        };
+    }
+
+</script>
+<style>
+
+
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+
+    .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 3px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+    }
+
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+
+    .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+</style>    

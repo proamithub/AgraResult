@@ -1,0 +1,75 @@
+﻿@using RRepo
+@model List<RModel.DTO.STUDENT_MARKS_AMDTO>
+@{
+
+}
+
+<style>
+    #example1 tbody tr:hover {
+        background-color: rgb(242 163 0 / 5%);
+    }
+</style>
+
+
+
+@if (Model != null)
+{
+    if (Model.Count() > 0)
+    {
+        <table id="example1" class="table table-bordered table-striped" width="100%">
+            <thead class="table-danger">
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Subject Type</th>                    
+                    <th>Paper Name</th>
+                    <th>Theory Marks</th>
+                    <th>Int/Pract. Marks</th>
+                    <th>Total</th>
+                    <th>Grade</th>
+                    <th>Credit</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.SUBJECT_NAME
+                        </td>
+                        <td>
+                            @item.SUBJECT_TYPE
+                        </td>
+                        <td>
+                            @item.PNAME_R
+                        </td>
+                        <td>
+                            @item.MARKS_OBT
+                        </td>
+                        <td>
+                            @item.INT_OBT
+                        </td>
+                        <td>
+                            @item.PAPER_TOT_MARKS_OBT
+                        </td>
+                        <td>
+                            @item.Grade
+                        </td>
+                        <td>
+                            @item.Credit
+                        </td>
+
+                    </tr>
+
+                    
+
+                }
+            </tbody>
+        </table>
+
+    }
+}

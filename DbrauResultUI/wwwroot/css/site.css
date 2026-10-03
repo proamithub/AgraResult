@@ -1,0 +1,36 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.navbar-default {
+    width: 100%;
+    /*position: absolute;*/
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border: none !important;
+    color: #fff;
+    background-color: #1F0B4B;
+}
+#wrap {
+    background-color: #f2f9fd;
+    min-height:450px;
+   
+}
+.bg-home-header {
+    padding: 5px 10px;
+    background: #4e74ee;
+    color:#fff;
+    background-image: radial-gradient(ellipse at bottom,#1a68d3 5%,transparent 60%),linear-gradient(136deg,transparent,#71c7ee 290%),linear-gradient(115deg,#736ee5,transparent 40%),linear-gradient(180deg,transparent 0,#1a68d3 70%),radial-gradient(ellipse at -70% -180%,transparent 80%,#71c7ee 0),radial-gradient(ellipse at bottom,#1a68d3 40%,transparent 80%),radial-gradient(ellipse at 5% 340%,transparent 80%,#bfc2f4 0);
+}

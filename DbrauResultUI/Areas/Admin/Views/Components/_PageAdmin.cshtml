@@ -1,0 +1,147 @@
+﻿@* 
+@model List<RModel.DTO.StudentMasterDTO>
+@{
+    StudentMasterDTO sdata = new StudentMasterDTO();
+    sdata = Model.Take(1).First();
+}
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card">
+
+            <div class="card-body">
+                <table id="" class="table table-bordered table-striped" width="100%">
+                    <tr>
+                        <th width="15%">Student Name</th>
+                        <td><strong> @sdata.NAME</strong></td>
+                    </tr>
+                    <tr>
+                        <th width="15%">College Name</th>
+                        <td>[@sdata.CCODE]-@sdata.CNAME</td>
+                    </tr>
+
+                    <tr>
+                        <th width="15%">Father Name</th>
+                        <td>@sdata.FNAME</td>
+                    </tr>
+
+                    <tr>
+                        <th width="15%">Date of Birth</th>
+                        <td>
+                            @if (!string.IsNullOrEmpty(sdata.DOB.ToString()))
+                            {
+                                @sdata.DOB.Value.ToString("dd MMM yyyy")
+                            }
+
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-xl-12">
+
+
+
+        <div class="card">
+
+           
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped" width="100%">
+                    <thead class="table-info">
+                        <tr>
+
+                            <th>SrNo.</th>
+                            <th>Course Name</th>
+                            <th>Semester</th>
+                            <th>HeldIn</th>
+                            <th>Session</th>
+                            <th>Result/Final_Result</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            if (Model.Count() > 0)
+                            {
+                                int i = 1;
+                                foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td class="text-center">
+                                            @i                                           
+                                        </td>
+                                        <td>
+                                            @item.CourseName
+                                        </td>
+                                        <td>
+                                            @item.DisplaySemester
+                                        </td>
+                                        <td>
+                                            @item.HELD_IN
+                                        </td>
+                                        <td>
+                                            @item.SessionName
+                                        </td>
+                                        <td>
+                                            @item.RESULT /
+                                            @if (!string.IsNullOrEmpty(item.FINAL_RESULT))
+                                            {
+                                                <span>
+                                                    @item.FINAL_RESULT
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span>
+                                                    --
+                                                </span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @{
+                                                var data1 = item.CourseName + "$" + item.ROLL_NO + "$" + item.CourseType + "$" + item.EXAM_TYPE + "$" + item.SessionName;
+                                               // data1 = AESEncription.Base64Encode(data1);
+                                                var UriPayload = "/resultpreview/" + data1;
+                                            }
+                                            <a class="btn btn-danger btn-sm w-100" href="@UriPayload" target="_blank">View </a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <p>
+                                        Data Not Found!
+                                    </p>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+           
+        </div>
+    </div>
+
+</div>
+
+ *@
+
+
+                        fdgsdgsgdf
