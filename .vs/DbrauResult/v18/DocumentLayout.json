@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\vrs\\Helpdesk\\AgraResult\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\areas\\admin\\views\\shared\\_headeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\areas\\admin\\views\\shared\\_headeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\wwwroot\\contents\\admin\\dist\\css\\adminlte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|d:\\vrs\\helpdesk\\agraresult\\dbrauresultui\\views\\components\\_result_bsc_ag_7.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FCF9D453-B25E-4E3D-9517-894C17CBAD46}|DbrauResultUI\\DbrauResultUI.csproj|solutionrelative:dbrauresultui\\views\\components\\_result_bsc_ag_7.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,53 +39,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAAHsAAAA9AAAAAAAAAA==",
+              "Title": "_Result_Bsc_AG_7.cshtml",
+              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Views\\Components\\_Result_Bsc_AG_7.cshtml",
+              "RelativeDocumentMoniker": "DbrauResultUI\\Views\\Components\\_Result_Bsc_AG_7.cshtml",
+              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Views\\Components\\_Result_Bsc_AG_7.cshtml",
+              "RelativeToolTip": "DbrauResultUI\\Views\\Components\\_Result_Bsc_AG_7.cshtml",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAN8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-03T06:25:25.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_headerAdmin.cshtml",
-              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
-              "RelativeDocumentMoniker": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
-              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
-              "RelativeToolTip": "DbrauResultUI\\Areas\\Admin\\Views\\Shared\\_headerAdmin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-03T06:24:59.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "adminlte.min.css",
-              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
-              "RelativeDocumentMoniker": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
-              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
-              "RelativeToolTip": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.min.css",
-              "ViewState": "AgIAADoAAAAAAAAAAAAYwGgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-10-03T06:09:32.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "adminlte.css",
-              "DocumentMoniker": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
-              "RelativeDocumentMoniker": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
-              "ToolTip": "D:\\vrs\\Helpdesk\\AgraResult\\DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
-              "RelativeToolTip": "DbrauResultUI\\wwwroot\\Contents\\Admin\\dist\\css\\adminlte.css",
-              "ViewState": "AgIAAFXPAAAAAAAAAAAAAHPPAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-10-03T06:06:12.266Z",
+              "WhenOpened": "2026-10-12T06:53:10.143Z",
               "EditorCaption": ""
             }
           ]
