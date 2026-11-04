@@ -144,10 +144,17 @@
                             {
                                 <li class="nav-item">
                                     <a href="/admin/dashboard/studentlist" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-red"></i>
-                                    <p class="text">STUDENT MASTER</p>
-                                </a>
-                            </li>}
+                                        <i class="nav-icon far fa-circle text-red"></i>
+                                        <p class="text">STUDENT MASTER</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0);" onclick="resetTotalCacheAndBuffer();" class="nav-link">
+                                        <i class="nav-icon fas fa-sync-alt text-warning"></i>
+                                        <p class="text">CLEAR CACHE & BUFFER</p>
+                                    </a>
+                                </li>
+                            }
                         }
 
                        
@@ -163,17 +170,7 @@
                          *@
                       
                    
-                        <!-- Reset Cache & Buffer (Left Menu) -->
-                        <li class="nav-header text-uppercase" style="font-size:0.7rem; letter-spacing:1px; color:#adb5bd; margin-top:15px; padding-left:1rem;">SYSTEM CACHE</li>
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" onclick="resetTotalCacheAndBuffer();" class="nav-link btn-cache-reset text-white" title="Reset Total Cache & Buffer">
-                                <i class="nav-icon fas fa-broom"></i>
-                                <p>
-                                    Reset Cache
-                                    <span class="right badge badge-warning"><i class="fas fa-sync-alt"></i> Buffer</span>
-                                </p>
-                            </a>
-                        </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -387,5 +384,94 @@ $(function() {
     
 });
 </script>
+
+    @if (CurrentUser.Roles.Contains("SuperAdmin"))
+    {
+        <script>
+            function resetTotalCacheAndBuffer() {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({
+                        title: 'Reset Cache & Buffer?',
+                        text: 'Kya aap sure hain? Yeh server cache, SQL connection pools aur browser storage ko reset kar dega.',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#6c757d',
+                        confirmButtonText: '<i class=\"fas fa-sync-alt mr-1\"></i> Yes, Reset All',
+                        cancelButtonText: 'Cancel'
+                    }).then(function (result) {
+                        if (result.isConfirmed) {
+                            executeReset();
+                        }
+                    });
+                } else {
+                    if (confirm('Reset total cache and buffer?')) {
+                        executeReset();
+                    }
+                }
+            }
+
+            function executeReset() {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({
+                        title: 'Resetting Cache & Buffers...',
+                        text: 'Please wait...',
+                        allowOutsideClick: false,
+                        didOpen: function () {
+                            Swal.showLoading();
+                        }
+                    });
+                }
+
+                fetch('/admin/dashboard/cleartotalcache', {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (data) {
+                    try {
+                        sessionStorage.clear();
+                        var savedMode = localStorage.getItem('admin_theme_mode');
+                        var savedColor = localStorage.getItem('admin_theme_color');
+                        localStorage.clear();
+                        if (savedMode) localStorage.setItem('admin_theme_mode', savedMode);
+                        if (savedColor) localStorage.setItem('admin_theme_color', savedColor);
+
+                        if ('caches' in window) {
+                            caches.keys().then(function (names) {
+                                names.forEach(function (name) { caches.delete(name); });
+                            });
+                        }
+                    } catch (e) { }
+
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            icon: data.success ? 'success' : 'warning',
+                            title: data.success ? 'Success!' : 'Notice',
+                            text: data.message || 'Cache & buffer successfully reset.',
+                            timer: 2000,
+                            showConfirmButton: false
+                        }).then(function () {
+                            window.location.reload(true);
+                        });
+                    } else {
+                        alert(data.message || 'Cache & buffer reset successfully.');
+                        window.location.reload(true);
+                    }
+                })
+                .catch(function (err) {
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire('Error', 'Cache reset failed: ' + err, 'error');
+                    } else {
+                        alert('Cache reset failed: ' + err);
+                    }
+                });
+            }
+        </script>
+    }
 </body>
 </html>

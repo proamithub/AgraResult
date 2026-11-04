@@ -605,6 +605,11 @@ namespace DbrauResultUI.Areas.Admin.Controllers
         {
             try
             {
+                if (CurrentUser == null || !CurrentUser.Roles.Contains("SuperAdmin"))
+                {
+                    return Json(new { success = false, message = "Unauthorized. Only SuperAdmin can reset cache and buffer." });
+                }
+
                 // 1. Clear ADO.NET Connection Pools (frees all stale SQL connections & buffers)
                 SqlConnection.ClearAllPools();
 

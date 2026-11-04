@@ -1,4 +1,4 @@
-﻿@* <div class="preloader flex-column justify-content-center align-items-center">
+@* <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="~/logo_header.png" alt="AdminLogo" height="60" width="60">
 </div> *@
 
@@ -60,35 +60,6 @@
     aside.main-sidebar .brand-link,
     aside.main-sidebar .sidebar-custom {
         transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-    }
-
-    /* Reset Cache & Buffer Button in Left Menu */
-    .btn-cache-reset {
-        background: linear-gradient(135deg, #dc3545, #fd7e14) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-        border-radius: 6px !important;
-        box-shadow: 0 2px 6px rgba(220, 53, 69, 0.35);
-        margin-top: 4px;
-        transition: all 0.3s ease !important;
-    }
-    .btn-cache-reset:hover {
-        background: linear-gradient(135deg, #c82333, #e8590c) !important;
-        box-shadow: 0 4px 10px rgba(220, 53, 69, 0.5) !important;
-        transform: translateY(-1px);
-    }
-    .btn-cache-reset i.fa-broom {
-        transition: transform 0.3s ease;
-    }
-    .btn-cache-reset:hover i.fa-broom {
-        transform: rotate(-20deg) scale(1.15);
-    }
-    .btn-cache-reset .badge-warning {
-        background-color: #ffc107 !important;
-        color: #212529 !important;
-        font-weight: 700;
-        font-size: 0.7rem;
-        padding: 3px 6px;
     }
 </style>
 
@@ -192,12 +163,6 @@
             </div>
         </li>
 
-        <!-- Quick Reset Cache & Buffer Header Button -->
-        <li class="nav-item mr-1">
-            <a class="nav-link text-warning" href="javascript:void(0);" onclick="resetTotalCacheAndBuffer();" role="button" title="Quick Reset Cache & Buffer">
-                <i class="fas fa-broom mr-1"></i> <span class="d-none d-md-inline" style="font-weight: 600; font-size: 0.85rem;">Reset Cache</span>
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
@@ -423,94 +388,6 @@
             document.addEventListener('DOMContentLoaded', initThemeControls);
         } else {
             initThemeControls();
-        }
-
-        window.resetTotalCacheAndBuffer = function () {
-            if (typeof Swal !== 'undefined') {
-                Swal.fire({
-                    title: 'Reset Cache & Buffer?',
-                    html: '<p style=\"font-size:0.95rem; color:#6c757d; margin-bottom:0;\">Kya aap sure hain? Yeh <b>server cache</b>, <b>SQL clean buffers</b>, <b>connection pools</b> aur <b>browser storage</b> ko total reset kar dega.</p>',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#dc3545',
-                    cancelButtonColor: '#6c757d',
-                    confirmButtonText: '<i class=\"fas fa-broom mr-1\"></i> Yes, Reset All!',
-                    cancelButtonText: 'Cancel'
-                }).then(function (result) {
-                    if (result.isConfirmed) {
-                        executeCacheAndBufferReset();
-                    }
-                });
-            } else {
-                if (confirm(\"Reset total server cache, SQL connection pools & buffer?\")) {
-                    executeCacheAndBufferReset();
-                }
-            }
-        };
-
-        function executeCacheAndBufferReset() {
-            if (typeof Swal !== 'undefined') {
-                Swal.fire({
-                    title: 'Resetting Cache & Buffers...',
-                    text: 'Server memory, SQL pools aur client storage clear ho rahe hain...',
-                    allowOutsideClick: false,
-                    didOpen: function () {
-                        Swal.showLoading();
-                    }
-                });
-            }
-
-            fetch('/admin/dashboard/cleartotalcache', {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            })
-            .then(function (res) {
-                return res.json();
-            })
-            .then(function (data) {
-                // Clear browser client storage while preserving user\'s theme selection
-                try {
-                    sessionStorage.clear();
-                    var savedThemeMode = localStorage.getItem('admin_theme_mode');
-                    var savedThemeColor = localStorage.getItem('admin_theme_color');
-                    localStorage.clear();
-                    if (savedThemeMode) localStorage.setItem('admin_theme_mode', savedThemeMode);
-                    if (savedThemeColor) localStorage.setItem('admin_theme_color', savedThemeColor);
-
-                    if ('caches' in window) {
-                        caches.keys().then(function (names) {
-                            names.forEach(function (name) { caches.delete(name); });
-                        });
-                    }
-                } catch (e) {
-                    console.error('Client cache clear error', e);
-                }
-
-                if (typeof Swal !== 'undefined') {
-                    Swal.fire({
-                        icon: data.success ? 'success' : 'warning',
-                        title: data.success ? 'Reset Successful!' : 'Notice',
-                        text: data.message || 'Total cache aur buffer successfully reset ho gaye hain.',
-                        timer: 2000,
-                        showConfirmButton: false
-                    }).then(function () {
-                        window.location.reload(true);
-                    });
-                } else {
-                    alert(data.message || 'Cache & buffer reset successfully.');
-                    window.location.reload(true);
-                }
-            })
-            .catch(function (err) {
-                console.error(err);
-                if (typeof Swal !== 'undefined') {
-                    Swal.fire('Error', 'Cache reset request failed: ' + err, 'error');
-                } else {
-                    alert('Cache reset failed: ' + err);
-                }
-            });
         }
     })();
 </script>
