@@ -1,3 +1,5 @@
+﻿using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 using RDATA.Dapper;
 using RDATA;
 using RModel;
@@ -23,6 +25,34 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IMailClient, MailClient>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+    {
+        "text/plain",
+        "text/html",
+        "text/css",
+        "text/javascript",
+        "application/javascript",
+        "application/json",
+        "application/xml",
+        "image/svg+xml"
+    });
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Fastest;
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Fastest;
+});
 
 builder.Services.AddSession(options =>
 {
@@ -126,7 +156,18 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles();
+// Response Compression should be called before UseStaticFiles
+app.UseResponseCompression();
+
+// Static file caching (7 days for CSS, JS, images, fonts)
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        const int durationInSeconds = 60 * 60 * 24 * 7; // 7 days
+        ctx.Context.Response.Headers["Cache-Control"] = $"public,max-age={durationInSeconds}";
+    }
+});
 
 app.UseSession();
 app.UseCookiePolicy();

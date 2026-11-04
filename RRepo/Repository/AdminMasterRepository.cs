@@ -64,7 +64,7 @@ namespace RRepo
 
                 AdminMaster? admin = new AdminMaster();
                 await using var con = new SqlConnection(_connectionString);
-                con.Open();
+                await con.OpenAsync();
                 string _pass = AESEncription.Base64Encode(password);
                 var paramList = new
                 {
@@ -164,7 +164,7 @@ namespace RRepo
         {
             var list = new List<CourseMasterDTO_AM>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -181,7 +181,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -189,7 +189,7 @@ namespace RRepo
         {
             var list = new List<TemplateRules_AM>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -206,7 +206,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -215,7 +215,7 @@ namespace RRepo
         {
             var list = new List<CourseMasterDTO_AM>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -235,7 +235,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -245,7 +245,7 @@ namespace RRepo
             var list = new List<ExamTyperDTO_AM>();
 
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -264,7 +264,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -272,7 +272,7 @@ namespace RRepo
         {
             var list = new List<ExamTyperDTO_AM>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -290,7 +290,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -298,7 +298,7 @@ namespace RRepo
         {
             var list = new List<SessionDTO>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -315,7 +315,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -326,7 +326,7 @@ namespace RRepo
             StudentMasterDTO list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -352,7 +352,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -361,7 +361,7 @@ namespace RRepo
             StudentMasterDTO list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -407,7 +407,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -416,7 +416,7 @@ namespace RRepo
             List<STUDENT_MARKS_AMDTO> list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -440,7 +440,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -449,7 +449,7 @@ namespace RRepo
             FormResponse list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -470,7 +470,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -480,7 +480,7 @@ namespace RRepo
             List<STUDENT_RESULT_AMDTO> list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -504,7 +504,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -513,7 +513,7 @@ namespace RRepo
             List<CSP_MASTER_AMDTO> list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -532,7 +532,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -542,7 +542,7 @@ namespace RRepo
             List<CourseMasterDTO_AM> list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -561,7 +561,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -570,7 +570,7 @@ namespace RRepo
             List<CSP_MASTER_AMDTO> list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -587,7 +587,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -597,7 +597,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -616,7 +616,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -624,7 +624,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -643,7 +643,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -651,7 +651,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -687,7 +687,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -695,7 +695,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -731,7 +731,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -741,7 +741,7 @@ namespace RRepo
 
             var list = new CourseMasterDTO_AM();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -769,7 +769,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -779,7 +779,7 @@ namespace RRepo
             StudentMasterDTO list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_DELLconnectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -798,7 +798,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -807,7 +807,7 @@ namespace RRepo
 
             List<StudentMasterDTO> list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -832,7 +832,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
 
@@ -843,7 +843,7 @@ namespace RRepo
 
             List<STUDENT_MARKS_AMDTO> list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -872,7 +872,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
 
@@ -884,7 +884,7 @@ namespace RRepo
             StudentMasterERPDTO list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_ERPconnectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -946,7 +946,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -957,7 +957,7 @@ namespace RRepo
 
             List<StudentMasterDTO> list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -986,7 +986,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
 
@@ -995,7 +995,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1018,7 +1018,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1027,7 +1027,7 @@ namespace RRepo
         {
             var list = new List<HeldinDTO>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1048,7 +1048,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1056,7 +1056,7 @@ namespace RRepo
         {
             var list = new List<ResultViewedDTO>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1074,7 +1074,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1082,7 +1082,7 @@ namespace RRepo
         {
             var list = new List<Ledger_AMDTO>();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1099,7 +1099,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1109,7 +1109,7 @@ namespace RRepo
             FormResponse list = new();
             // var list = new StudentMasterDTO();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
 
@@ -1146,7 +1146,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1154,7 +1154,7 @@ namespace RRepo
         {
             FormResponse list = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1173,7 +1173,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return list;
         }
@@ -1182,7 +1182,7 @@ namespace RRepo
 
             DataTable dt = new DataTable();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1202,7 +1202,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return dt;
         }
@@ -1211,7 +1211,7 @@ namespace RRepo
 
             DataTable dt = new DataTable();
             await using var con = new SqlConnection(_EXAMconnectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1236,7 +1236,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return dt;
         }
@@ -1245,7 +1245,7 @@ namespace RRepo
         {
             ResultDTO_DASH d = new();
             await using var con = new SqlConnection(_connectionString);
-            con.Open();
+            await con.OpenAsync();
             try
             {
                 var paramList = new
@@ -1278,7 +1278,7 @@ namespace RRepo
             }
             finally
             {
-                con.Close();
+                await con.CloseAsync();
             }
             return d;
         }
