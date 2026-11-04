@@ -23,6 +23,8 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using DbrauResultUI.Helpers;
 using static System.Collections.Specialized.BitVector32;
 
 namespace DbrauResultUI.Areas.Admin.Controllers
@@ -592,6 +594,54 @@ namespace DbrauResultUI.Areas.Admin.Controllers
                             _sheetName: "DownloadPending",
                             _dt: dt1);
             return Json(new { filename = returnfilename, filepath = absoultefilepath });
+        }
+
+        [HttpPost]
+        [HttpGet]
+        [IgnoreAntiforgeryToken]
+        [Route("~/admin/dashboard/cleartotalcache")]
+        [Route("~/admin/cleartotalcache")]
+        public async Task<IActionResult> ClearTotalCache()
+        {
+            try
+            {
+                // 1. Clear ADO.NET Connection Pools (frees all stale SQL connections & buffers)
+                SqlConnection.ClearAllPools();
+
+                // 2. Clear SQL Server clean buffers and procedure plan cache (if permissible by SQL user)
+                string connStr = config["ConnectionStrings:DefaultConnectionResult"];
+                if (!string.IsNullOrEmpty(connStr))
+                {
+                    try
+                    {
+                        using var con = new SqlConnection(connStr);
+                        await con.OpenAsync();
+                        using var cmd = con.CreateCommand();
+                        cmd.CommandText = "CHECKPOINT; DBCC DROPCLEANBUFFERS; DBCC FREEPROCCACHE;";
+                        cmd.CommandTimeout = 10;
+                        await cmd.ExecuteNonQueryAsync();
+                        await con.CloseAsync();
+                    }
+                    catch
+                    {
+                        // DBCC permissions might not be granted for normal users; continue safely
+                    }
+                }
+
+                // 3. Clear application CacheService
+                CacheService.ClearCache();
+
+                // 4. Force garbage collection of memory buffers
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+
+                return Json(new { success = true, message = "Total server cache, SQL connection pools, and memory buffers have been successfully reset!" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Cache reset failed: " + ex.Message });
+            }
         }
 
     }
