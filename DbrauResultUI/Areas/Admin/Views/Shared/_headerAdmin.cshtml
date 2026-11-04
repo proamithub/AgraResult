@@ -1,44 +1,393 @@
-﻿
-<div class="login-header box-shadow">
-    <div class="bg-home-header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-1 p-1 text-center">
-                    <a href="" class="">
-                        <img src="/logo_header.png" style="width:100px" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-7 p-2 text-start" style="line-height:25px">
-                    <h2 class="university-name"> DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA</h2>
-                    <p class="university-name-hindi m-0"> डॉ० भीमराव आंबेडकर विश्वविद्यालय, आगरा</p>
-                    <p class="university-name-hindi m-0">(Formerly Agra University, Agra)</p>
-                </div>
-                <div class="bg-home-header card text-white col-sm-4 text-center float-end" hidden>
-                    <h4> <strong><i class="fa fa-headset glowhead"></i> Help Desk </strong></h4>
+@* <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="~/logo_header.png" alt="AdminLogo" height="60" width="60">
+</div> *@
 
-                    <p class="mb-0"> <i class="fa fa-phone"></i><a class=" text-decoration-none" href="tel:+917355021538"><span class="text-white">+91- 7355021538</span></a>, <a class=" text-decoration-none" href="tel:+917839142531"><span class="text-white">7839142531</span></a> </p>
-
-
-                    <p> Timing: <br />11:00 AM to 02:00 PM  - 02:30 PM to 05:30 PM <br />(Working Days Only)</p>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 <style>
-    .glowhead {
-        animation: example1 2s linear infinite;
+    .theme-dropdown .dropdown-menu {
+        min-width: 310px;
+        border-radius: 8px;
     }
-
-    @@keyframes example1 {
-        from {
-            color: white;
-        }
-
-        to {
-            color: #337ab7;
-        }
+    .dark-mode .theme-dropdown .dropdown-menu {
+        background-color: #343a40;
+        color: #fff;
+        border: 1px solid #4b545c;
+    }
+    .dark-mode .theme-dropdown .dropdown-divider {
+        border-top-color: #4b545c;
+    }
+    .dark-mode .theme-dropdown .text-muted {
+        color: #adb5bd !important;
+    }
+    .theme-preset-circle {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        border: 2px solid rgba(255,255,255,0.4);
+    }
+    .theme-preset-circle:hover {
+        transform: scale(1.25);
+        box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    }
+    .theme-preset-circle.active {
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #007bff;
+        transform: scale(1.15);
+    }
+    .theme-dropdown .btn-group-toggle .btn {
+        font-weight: 500;
+        font-size: 0.85rem;
+    }
+    .theme-dropdown .btn-group-toggle .btn.active {
+        background-color: #007bff !important;
+        border-color: #007bff !important;
+        color: #fff !important;
+        box-shadow: none !important;
+    }
+    .dark-mode .theme-dropdown .btn-group-toggle .btn:not(.active) {
+        color: #ced4da;
+        border-color: #6c757d;
+        background-color: transparent;
+    }
+    .dark-mode .theme-dropdown .btn-group-toggle .btn:not(.active):hover {
+        background-color: #495057;
+        color: #fff;
+    }
+    nav.main-header.navbar,
+    aside.main-sidebar,
+    aside.main-sidebar .brand-link,
+    aside.main-sidebar .sidebar-custom {
+        transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     }
 </style>
+
+<!-- Immediate pre-paint script to prevent flicker on page load -->
+<script>
+    (function () {
+        try {
+            var m = localStorage.getItem('admin_theme_mode') || 'dark';
+            if (m === 'light') {
+                document.body.classList.remove('dark-mode');
+            } else {
+                document.body.classList.add('dark-mode');
+            }
+            var c = localStorage.getItem('admin_theme_color');
+            if (c) {
+                var hex = c.replace('#', '');
+                if (hex.length === 3) hex = hex.split('').map(function (x) { return x + x; }).join('');
+                var r = parseInt(hex.substr(0, 2), 16), g = parseInt(hex.substr(2, 2), 16), b = parseInt(hex.substr(4, 2), 16);
+                var isDark = (((r * 299) + (g * 587) + (b * 114)) / 1000) < 150;
+                var borderColor = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.12)';
+                var textColor = isDark ? '#c2c7d0' : '#212529';
+                var textHover = isDark ? '#ffffff' : '#000000';
+
+                var dyn = document.createElement('style');
+                dyn.id = 'admin-dynamic-theme-style';
+                dyn.innerHTML =
+                    'nav.main-header.navbar { background-color: ' + c + ' !important; border-bottom: 1px solid ' + borderColor + ' !important; } ' +
+                    'aside.main-sidebar, aside.main-sidebar::before, aside.main-sidebar .brand-link, aside.main-sidebar .sidebar-custom { background-color: ' + c + ' !important; } ' +
+                    'aside.main-sidebar .brand-link, aside.main-sidebar .sidebar-custom, aside.main-sidebar .user-panel { border-color: ' + borderColor + ' !important; } ' +
+                    'aside.main-sidebar .brand-link, aside.main-sidebar .brand-link .brand-text { color: ' + textHover + ' !important; } ' +
+                    'aside.main-sidebar .nav-sidebar .nav-link, aside.main-sidebar .nav-sidebar .nav-link p, aside.main-sidebar .nav-sidebar .nav-link i { color: ' + textColor + ' !important; }';
+                document.head.appendChild(dyn);
+            }
+        } catch (e) { }
+    })();
+</script>
+
+<nav class="main-header navbar navbar-expand navbar-dark">
+
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/Dashboard" class="nav-link">Home</a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+
+        <!-- Theme Change Dropdown -->
+        <li class="nav-item dropdown theme-dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" title="Theme Settings" aria-expanded="false">
+                <i class="fas fa-palette"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-3 shadow-lg">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="font-weight-bold" style="font-size: 0.95rem;">
+                        <i class="fas fa-paint-brush mr-1 text-primary"></i> Theme Settings
+                    </span>
+                    <button type="button" class="btn btn-xs btn-outline-secondary" id="btnResetTheme" title="Reset theme and color">Reset</button>
+                </div>
+
+                <div class="dropdown-divider mb-3"></div>
+
+                <!-- 2 Base Themes: Light and Dark -->
+                <label class="small text-muted font-weight-bold text-uppercase mb-2 d-block">Base Theme</label>
+                <div class="btn-group btn-group-toggle w-100 mb-3" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary btn-sm" id="themeBtnLight" style="cursor: pointer; width: 50%;" title="Light Theme">
+                        <input type="radio" name="admin_theme_choice" value="light" autocomplete="off">
+                        <i class="fas fa-sun mr-1 text-warning"></i> Light
+                    </label>
+                    <label class="btn btn-outline-secondary btn-sm active" id="themeBtnDark" style="cursor: pointer; width: 50%;" title="Dark Theme">
+                        <input type="radio" name="admin_theme_choice" value="dark" autocomplete="off" checked>
+                        <i class="fas fa-moon mr-1 text-info"></i> Dark
+                    </label>
+                </div>
+
+                <div class="dropdown-divider mb-3"></div>
+
+                <!-- Custom Color Picker (Header & Left Menu) -->
+                <label class="small text-muted font-weight-bold text-uppercase mb-2 d-block">
+                    <i class="fas fa-eye-dropper mr-1"></i> Header & Menu Color
+                </label>
+                <div class="d-flex align-items-center mb-2">
+                    <input type="color" id="adminThemeColorPicker" class="form-control mr-2" style="height: 38px; width: 60px; padding: 2px; cursor: pointer; border-radius: 6px;" value="#343a40" title="Choose color">
+                    <input type="text" id="adminThemeColorCode" class="form-control form-control-sm font-monospace text-uppercase" placeholder="#343A40" style="font-weight: 600;" readonly>
+                </div>
+
+                <!-- Quick Preset Swatches -->
+                <div class="d-flex justify-content-between mt-2 pt-1">
+                    <span class="theme-preset-circle" data-color="#343a40" style="background:#343a40;" title="Default Dark (#343A40)"></span>
+                    <span class="theme-preset-circle" data-color="#1e293b" style="background:#1e293b;" title="Navy Slate (#1E293B)"></span>
+                    <span class="theme-preset-circle" data-color="#007bff" style="background:#007bff;" title="Primary Blue (#007BFF)"></span>
+                    <span class="theme-preset-circle" data-color="#28a745" style="background:#28a745;" title="Success Green (#28A745)"></span>
+                    <span class="theme-preset-circle" data-color="#17a2b8" style="background:#17a2b8;" title="Teal (#17A2B8)"></span>
+                    <span class="theme-preset-circle" data-color="#6f42c1" style="background:#6f42c1;" title="Purple (#6F42C1)"></span>
+                    <span class="theme-preset-circle" data-color="#e83e8c" style="background:#e83e8c;" title="Pink (#E83E8C)"></span>
+                    <span class="theme-preset-circle" data-color="#dc3545" style="background:#dc3545;" title="Danger Red (#DC3545)"></span>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("SignOut", "Home", new { area = "" }, null)" role="button">
+                <i class="fas fa-sign-out-alt"></i> LogOut
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    (function () {
+        function isDarkColor(hex) {
+            if (!hex) return true;
+            var c = hex.replace('#', '');
+            if (c.length === 3) c = c.split('').map(function (x) { return x + x; }).join('');
+            if (c.length !== 6) return true;
+            var r = parseInt(c.substr(0, 2), 16);
+            var g = parseInt(c.substr(2, 2), 16);
+            var b = parseInt(c.substr(4, 2), 16);
+            var brightness = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+            return brightness < 150;
+        }
+
+        function setButtonGroupActive(btnId) {
+            var ids = ['themeBtnLight', 'themeBtnDark'];
+            for (var i = 0; i < ids.length; i++) {
+                var el = document.getElementById(ids[i]);
+                if (el) {
+                    var input = el.querySelector('input');
+                    if (ids[i] === btnId) {
+                        el.classList.add('active');
+                        if (input) input.checked = true;
+                    } else {
+                        el.classList.remove('active');
+                        if (input) input.checked = false;
+                    }
+                }
+            }
+        }
+
+        function buildDynamicCss(color, isDark) {
+            var textColor = isDark ? '#c2c7d0' : '#212529';
+            var textHover = isDark ? '#ffffff' : '#000000';
+            var textActive = isDark ? '#ffffff' : '#000000';
+            var activeBg = isDark ? 'rgba(255, 255, 255, 0.18)' : 'rgba(0, 0, 0, 0.12)';
+            var hoverBg = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)';
+            var borderColor = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.12)';
+            var headerColor = isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.55)';
+
+            return '' +
+                'nav.main-header.navbar { background-color: ' + color + ' !important; border-bottom: 1px solid ' + borderColor + ' !important; } ' +
+                'aside.main-sidebar, aside.main-sidebar::before { background-color: ' + color + ' !important; } ' +
+                'aside.main-sidebar .brand-link { background-color: ' + color + ' !important; border-bottom: 1px solid ' + borderColor + ' !important; color: ' + textHover + ' !important; } ' +
+                'aside.main-sidebar .brand-link .brand-text { color: ' + textHover + ' !important; } ' +
+                'aside.main-sidebar .sidebar-custom { background-color: ' + color + ' !important; border-top: 1px solid ' + borderColor + ' !important; } ' +
+                'aside.main-sidebar .user-panel { border-bottom: 1px solid ' + borderColor + ' !important; } ' +
+                'aside.main-sidebar .user-panel .info a, aside.main-sidebar .user-panel .image i { color: ' + textHover + ' !important; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link { color: ' + textColor + ' !important; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link p, aside.main-sidebar .nav-sidebar .nav-link i { color: ' + textColor + ' !important; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link:hover { background-color: ' + hoverBg + ' !important; color: ' + textHover + ' !important; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link:hover p, aside.main-sidebar .nav-sidebar .nav-link:hover i { color: ' + textHover + ' !important; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link.active, aside.main-sidebar .nav-sidebar .nav-link.selectedmenu { background-color: ' + activeBg + ' !important; color: ' + textActive + ' !important; font-weight: 600; } ' +
+                'aside.main-sidebar .nav-sidebar .nav-link.active p, aside.main-sidebar .nav-sidebar .nav-link.active i, aside.main-sidebar .nav-sidebar .nav-link.selectedmenu p, aside.main-sidebar .nav-sidebar .nav-link.selectedmenu i { color: ' + textActive + ' !important; } ' +
+                'aside.main-sidebar .nav-header { color: ' + headerColor + ' !important; } ';
+        }
+
+        function applyAdminTheme(mode, color, save) {
+            mode = mode || localStorage.getItem('admin_theme_mode') || 'dark';
+            if (color === undefined) {
+                color = localStorage.getItem('admin_theme_color');
+            }
+
+            if (save) {
+                localStorage.setItem('admin_theme_mode', mode);
+                if (color) {
+                    localStorage.setItem('admin_theme_color', color);
+                } else {
+                    localStorage.removeItem('admin_theme_color');
+                }
+            }
+
+            var body = document.body;
+            var navbar = document.querySelector('nav.main-header');
+
+            // 1. Base Theme: light or dark
+            if (mode === 'light') {
+                if (body) body.classList.remove('dark-mode');
+                if (navbar && !color) {
+                    navbar.classList.remove('navbar-dark');
+                    navbar.classList.add('navbar-white', 'navbar-light');
+                    navbar.style.backgroundColor = '';
+                }
+                setButtonGroupActive('themeBtnLight');
+            } else { // 'dark'
+                if (body) body.classList.add('dark-mode');
+                if (navbar && !color) {
+                    navbar.classList.remove('navbar-white', 'navbar-light');
+                    navbar.classList.add('navbar-dark');
+                    navbar.style.backgroundColor = '';
+                }
+                setButtonGroupActive('themeBtnDark');
+            }
+
+            // 2. Custom Color Picker & Dynamic Style (Applies to Header + Left Menu)
+            var dynStyle = document.getElementById('admin-dynamic-theme-style');
+            var picker = document.getElementById('adminThemeColorPicker');
+            var codeInput = document.getElementById('adminThemeColorCode');
+            var presets = document.querySelectorAll('.theme-preset-circle');
+
+            if (color) {
+                var isDark = isDarkColor(color);
+                if (navbar) {
+                    if (isDark) {
+                        navbar.classList.remove('navbar-light');
+                        navbar.classList.add('navbar-dark');
+                    } else {
+                        navbar.classList.remove('navbar-dark');
+                        navbar.classList.add('navbar-light');
+                    }
+                }
+
+                if (!dynStyle) {
+                    dynStyle = document.createElement('style');
+                    dynStyle.id = 'admin-dynamic-theme-style';
+                    document.head.appendChild(dynStyle);
+                }
+                dynStyle.innerHTML = buildDynamicCss(color, isDark);
+
+                if (picker) picker.value = color;
+                if (codeInput) codeInput.value = color.toUpperCase();
+
+                for (var j = 0; j < presets.length; j++) {
+                    var presetColor = presets[j].getAttribute('data-color');
+                    if (presetColor && presetColor.toLowerCase() === color.toLowerCase()) {
+                        presets[j].classList.add('active');
+                    } else {
+                        presets[j].classList.remove('active');
+                    }
+                }
+            } else {
+                if (dynStyle) {
+                    dynStyle.remove();
+                }
+                if (navbar) navbar.style.backgroundColor = '';
+
+                var defaultColor = (mode === 'light' ? '#ffffff' : '#343a40');
+                if (picker) picker.value = defaultColor;
+                if (codeInput) codeInput.value = defaultColor.toUpperCase();
+
+                for (var k = 0; k < presets.length; k++) {
+                    presets[k].classList.remove('active');
+                }
+            }
+        }
+
+        function initThemeControls() {
+            var savedMode = localStorage.getItem('admin_theme_mode') || 'dark';
+            var savedColor = localStorage.getItem('admin_theme_color');
+            applyAdminTheme(savedMode, savedColor, false);
+
+            // Prevent dropdown from closing when interacting inside
+            var dropdownMenu = document.querySelector('.theme-dropdown .dropdown-menu');
+            if (dropdownMenu) {
+                dropdownMenu.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            // Theme switch buttons (Light / Dark)
+            var btnLight = document.getElementById('themeBtnLight');
+            if (btnLight) {
+                btnLight.addEventListener('click', function () {
+                    applyAdminTheme('light', null, true);
+                });
+            }
+
+            var btnDark = document.getElementById('themeBtnDark');
+            if (btnDark) {
+                btnDark.addEventListener('click', function () {
+                    applyAdminTheme('dark', null, true);
+                });
+            }
+
+            // Color picker (Header & Left Menu)
+            var colorPicker = document.getElementById('adminThemeColorPicker');
+            if (colorPicker) {
+                var handlePickerInput = function () {
+                    var curMode = localStorage.getItem('admin_theme_mode') || 'dark';
+                    applyAdminTheme(curMode, colorPicker.value, true);
+                };
+                colorPicker.addEventListener('input', handlePickerInput);
+                colorPicker.addEventListener('change', handlePickerInput);
+            }
+
+            // Quick color presets
+            var presetCircles = document.querySelectorAll('.theme-preset-circle');
+            for (var i = 0; i < presetCircles.length; i++) {
+                (function (circle) {
+                    circle.addEventListener('click', function () {
+                        var color = circle.getAttribute('data-color');
+                        var curMode = localStorage.getItem('admin_theme_mode') || 'dark';
+                        applyAdminTheme(curMode, color, true);
+                    });
+                })(presetCircles[i]);
+            }
+
+            // Reset button
+            var resetBtn = document.getElementById('btnResetTheme');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function () {
+                    localStorage.removeItem('admin_theme_mode');
+                    localStorage.removeItem('admin_theme_color');
+                    applyAdminTheme('dark', null, true);
+                });
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initThemeControls);
+        } else {
+            initThemeControls();
+        }
+    })();
+</script>

@@ -59,6 +59,14 @@
     .dark-mode input:-webkit-autofill, .dark-mode input:-webkit-autofill:focus, .dark-mode input:-webkit-autofill:hover, .dark-mode select:-webkit-autofill, .dark-mode select:-webkit-autofill:focus, .dark-mode select:-webkit-autofill:hover, .dark-mode textarea:-webkit-autofill, .dark-mode textarea:-webkit-autofill:focus, .dark-mode textarea:-webkit-autofill:hover {
         -webkit-text-fill-color: #3f474e;
     }
+    .dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(.is-invalid):not(:focus) {
+        border-color: #6c757d;
+    }
+
+    .dark-mode .content-wrapper {
+        background-color: #454d55;
+        color: #fff;
+    }
 </style>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     
@@ -69,53 +77,7 @@
             <img class="animation__shake" src="/logo_header.png" alt="" height="60" width="60">
         </div> *@
 
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
-
-            </ul>
-
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("SignOut", "Home", new { area = "" }, null)" role="button">
-                        <i class="fas fa-sign-out-alt"></i> LogOut
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-        <!-- /.navbar -->
+        @await Html.PartialAsync("_headerAdmin")
         @*@await Html.PartialAsync("_menuAdmin")*@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -135,8 +97,7 @@
                         <a href="#" class="d-block ">  <i class="nav-icon fas fa-user-circle"></i> @CurrentUser.Name</a>
                     </div>
                 </div>
-               @*  @await Html.PartialAsync("_headerAdmin")
-       @await Html.PartialAsync("_menuAdmin")*@
+               @*  @await Html.PartialAsync("_menuAdmin")*@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
